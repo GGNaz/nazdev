@@ -6,16 +6,12 @@ import netflix from "../assets/icons/netflix.png";
 import snakeandladder from "../assets/icons/snakeandladder.png";
 import ScrollAnimation from "../components/ScrollAnimation";
 import { FaRegHeart } from "@react-icons/all-files/fa/FaRegHeart";
-import { FaGamepad } from "@react-icons/all-files/fa/FaGamepad";
+import { FaCode } from "@react-icons/all-files/fa/FaCode";
+import Navbar from "../components/Navbar";
 export default function LandingPage() {
   const navigate = useNavigate();
 
-  const [mouseHover, setMouseHover] = useState("");
-
-  console.log(
-    "🚀 ~ file: LandingPage.tsx:8 ~ LandingPage ~ mouseHover:",
-    mouseHover
-  );
+  const [mouseClick, setMouseClick] = useState("");
 
   const aboutContent = () => {
     return (
@@ -27,50 +23,35 @@ export default function LandingPage() {
     );
   };
 
-  const projectsContent = () => {
-    return (
-      <div className="absolute bottom-10 right-5">
-        <div className="relative">
-          <img
-            src={snakeandladder}
-            alt="snakeandladder"
-            className="shadow-lg w-[40vw] "
-          />
-          <div className="absolute -top-5 -left-5">
-            <img src={apple} alt="apple" className="shadow-lg w-[40vw] " />
-          </div>
-          <div className="absolute -top-14 -left-14">
-            <img src={netflix} alt="netflix" className="shadow-lg w-[40vw] " />
-          </div>
-        </div>
-      </div>
-    );
-  };
-
-  const showIcons = () => {
-    switch (mouseHover) {
-      case "About":
-        return aboutContent();
-      case "Projects":
-        return projectsContent();
-      case "Experience":
-        return aboutContent();
-    }
+  const showAnimate = (route: string) => {
+    setMouseClick(route);
+    setTimeout(() => navigate(route), 500);
   };
 
   return (
-    <div className="flex flex-row">
+    <div className="flex flex-row overflow-hidden">
+      <Navbar />
+      <img
+        src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y29kaW5nfGVufDB8fDB8fHww&w=1000&q=80"
+        alt="bgimage"
+        className="bg-cover h-screen w-full absolute top-0 left-0 blur-sm"
+      />
+      <div className="h-screen w-full z-20 bg-gradient-to-tr from-black via-black/80 to-black/5 absolute top-0 " />
+
       <div className="basis-4/6 z-30">
-        <div className="flex flex-col gap-2 p-5 h-screen justify-center relative">
+        <div className="flex flex-col gap-2 px-5 h-screen justify-center relative">
           <ScrollAnimation
             animateTo={{ x: 0 }}
             animateFrom={{ x: 75 }}
             delay={0.5}
           >
             <div
-              className="text-9xl text-customGray font-extrabold hover:text-white cursor-pointer w-fit"
-              onMouseEnter={() => setMouseHover("About")}
-              onMouseLeave={() => setMouseHover("")}
+              className={`${
+                mouseClick === "about"
+                  ? "animate__animated animate__bounceOutLeft"
+                  : ""
+              } text-9xl text-customGray font-extrabold hover:text-white cursor-pointer w-fit transition delay-150 duration-300 ease-in-out hover:scale-90`}
+              onClick={() => showAnimate("about")}
             >
               About
             </div>
@@ -81,9 +62,14 @@ export default function LandingPage() {
             delay={0.7}
           >
             <div
-              className="text-9xl text-customGray font-extrabold hover:text-white cursor-pointer w-fit"
-              onMouseEnter={() => setMouseHover("Projects")}
-              onMouseLeave={() => setMouseHover("")}
+              onClick={() => showAnimate("project")}
+              className={`${
+                mouseClick === "project"
+                  ? "animate__animated animate__bounceOutLeft"
+                  : ""
+              } text-9xl text-customGray font-extrabold hover:text-white cursor-pointer w-fit transition delay-150 duration-300 ease-in-out hover:scale-90`}
+              // onMouseEnter={() => setMouseHover("Projects")}
+              // onMouseLeave={() => setMouseHover("")}
             >
               Projects
             </div>
@@ -94,16 +80,22 @@ export default function LandingPage() {
             delay={0.9}
           >
             <div
-              className="text-9xl text-customGray font-extrabold hover:text-white cursor-pointer w-fit"
-              onMouseEnter={() => setMouseHover("Experience")}
-              onMouseLeave={() => setMouseHover("")}
+              onClick={() => showAnimate("experience")}
+              className={`${
+                mouseClick === "experience"
+                  ? "animate__animated animate__bounceOutLeft"
+                  : ""
+              } text-9xl text-customGray font-extrabold hover:text-white cursor-pointer w-fit transition delay-150 duration-300 ease-in-out hover:scale-90`}
             >
               Experience
             </div>
           </ScrollAnimation>
         </div>
       </div>
-      <div className="basis-2/6">{mouseHover !== "" && <>{showIcons()}</>}</div>
+      <div className="basis-2/6 flex justify-center items-center">
+        {/* {mouseHover !== "" && <>{showIcons()}</>} */}
+        <FaCode className="h-[40vh] w-[40vw] text-customGray" />
+      </div>
     </div>
   );
 }
