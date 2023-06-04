@@ -8,7 +8,7 @@ import ProjectPage from "./pages/ProjectPage";
 import ExperiencePage from "./pages/ExperiencePage";
 function App() {
   return (
-    <div className="bg-customBlack">
+    <div>
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/about" element={<AboutPage />} />

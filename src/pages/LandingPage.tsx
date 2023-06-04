@@ -13,16 +13,6 @@ export default function LandingPage() {
 
   const [mouseClick, setMouseClick] = useState("");
 
-  const aboutContent = () => {
-    return (
-      <div className="absolute right-0 bottom-0">
-        <div className="relative">
-          <img src={picture} alt="picture" className="h-[80vh]" />
-        </div>
-      </div>
-    );
-  };
-
   const showAnimate = (route: string) => {
     setMouseClick(route);
     setTimeout(() => navigate(route), 500);
@@ -32,11 +22,11 @@ export default function LandingPage() {
     <div className="flex flex-row overflow-hidden">
       <Navbar />
       <img
-        src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y29kaW5nfGVufDB8fDB8fHww&w=1000&q=80"
+        src="https://images.pexels.com/photos/574069/pexels-photo-574069.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
         alt="bgimage"
-        className="bg-cover h-screen w-full absolute top-0 left-0 blur-sm"
+        className="bg-cover h-screen w-full absolute top-0 left-0 "
       />
-      <div className="h-screen w-full z-20 bg-gradient-to-tr from-black via-black/80 to-black/5 absolute top-0 " />
+      <div className="h-screen w-full z-20 bg-gradient-to-tr from-black via-black/80 to-black/5 absolute top-0 backdrop-blur-sm" />
 
       <div className="basis-4/6 z-30">
         <div className="flex flex-col gap-2 px-5 h-screen justify-center relative">
