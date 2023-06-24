@@ -1,8 +1,7 @@
-import React from "react";
 import { FaLinkedinIn } from "@react-icons/all-files/fa/FaLinkedinIn";
 import { FaGithub } from "@react-icons/all-files/fa/FaGithub";
 import { FaRegEnvelope } from "@react-icons/all-files/fa/FaRegEnvelope";
-import ScrollAnimation from "./ScrollAnimation";
+
 export default function Navbar() {
   return (
     <div className=" py-3 px-5 absolute top-0 left-0 z-50 w-full">
