@@ -7,14 +7,22 @@ export default function Navbar() {
     <div className=" py-3 px-5 absolute top-0 left-0 z-50 w-full">
       <div className="flex flex-row justify-between text-white">
         <div className="flex gap-3 text-xl">
-          <button>
+          <a
+            href="https://www.linkedin.com/in/nazer-somera-b7b598223/"
+            target="blank"
+            rel="noopener noreferrer"
+          >
             {" "}
             <FaLinkedinIn />
-          </button>
-          <button>
+          </a>
+          <a
+            href="https://github.com/GGNaz"
+            target="blank"
+            rel="noopener noreferrer"
+          >
             {" "}
             <FaGithub />{" "}
-          </button>
+          </a>
         </div>
         <div>
           <button className="flex gap-2 items-center  text-xl">

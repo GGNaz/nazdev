@@ -1,9 +1,21 @@
+import { useNavigate } from "react-router-dom";
 import profile from "../assets/Images/profile.jpg";
 import ScrollAnimation from "../components/ScrollAnimation";
+import { FaArrowLeft } from "@react-icons/all-files/fa/FaArrowLeft";
 export default function AboutPage() {
+  const navigate = useNavigate();
   return (
     <div className="flex justify-center ">
-      <div className="flex flex-col gap-10 max-w-5xl w-full pt-5  ">
+      <div className="flex flex-col gap-5 max-w-5xl w-full pt-5  ">
+        <div>
+          <button
+            className="flex flex-row gap-2  text-customLightgray items-center"
+            onClick={() => navigate(-1)}
+          >
+            {" "}
+            <FaArrowLeft /> Back
+          </button>
+        </div>
         <div className="flex flex-col relative animate__animated animate__backInLeft">
           <div className="font-outline-2 text-8xl text-customBlack font-black ">
             ABOUT ME
@@ -18,7 +30,7 @@ export default function AboutPage() {
           delay={0.5}
         >
           <div className="flex flex-col md:flex-row gap-10 items-center">
-            <img src={profile} className="h-[60vh] rounded-lg " alt="profile" />
+            <img src={profile} className="h-[60vh]" alt="profile" />
 
             <div className="flex flex-col gap-5">
               <ScrollAnimation

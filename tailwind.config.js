@@ -13,4 +13,5 @@ export const theme = {
     },
   },
 };
-export const plugins = [];
+// eslint-disable-next-line @typescript-eslint/no-var-requires, no-undef
+export const plugins = [require("tailwind-scrollbar")({ nocompatible: true })];
