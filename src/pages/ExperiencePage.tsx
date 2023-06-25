@@ -1,10 +1,11 @@
 import { useNavigate } from "react-router-dom";
 import ScrollAnimation from "../components/ScrollAnimation";
-import { FaArrowLeft } from "@react-icons/all-files/fa/FaArrowLeft";
+import { RiArrowLeftLine } from "@react-icons/all-files/ri/RiArrowLeftLine";
 import { FaSuitcase } from "@react-icons/all-files/fa/FaSuitcase";
 import { FaCode } from "@react-icons/all-files/fa/FaCode";
 import xypher from "../assets/Images/xypher.png";
 import philmech from "../assets/Images/philmech.png";
+import { useState, useEffect } from "react";
 export default function ExperiencePage() {
   const navigate = useNavigate();
   const experience = [
@@ -17,6 +18,7 @@ export default function ExperiencePage() {
       image: xypher,
       link: "https://xyphersolutionsinc.com/",
       delay: 0.5,
+      isExpand: false,
     },
     {
       _id: 2,
@@ -27,31 +29,60 @@ export default function ExperiencePage() {
       image: philmech,
       link: "https://www.philmech.gov.ph/",
       delay: 0.8,
+      isExpand: false,
     },
   ];
+
+  type ExperienceProps = {
+    _id?: number;
+    position?: string;
+    date?: string;
+    desc?: string;
+    icon?: JSX.Element;
+    image?: string;
+    link?: string;
+    delay: number;
+    isExpand?: boolean;
+  };
+
+  const [expanded, setExpanded] = useState<boolean>(false);
+  const [experienceList, setExperience] = useState<ExperienceProps[]>([]);
+
+  useEffect(() => {
+    setExperience(experience);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  // const toggleExpanded = (index: number) => {
+  //   setExpanded(!expanded);
+  //   const copyData = [...experience];
+  //   copyData[index - 1].isExpand = !expanded;
+  //   setExperience(copyData);
+  // };
+
   return (
     <div className="flex justify-center bg-customBlack pb-5">
-      <div className="flex flex-col gap-5 max-w-5xl w-full pt-5">
+      <div className="flex flex-col gap-5 max-w-5xl w-full p-5">
         <div>
           <button
             className="flex flex-row gap-2  text-customLightgray items-center"
-            onClick={() => navigate(-1)}
+            onClick={() => navigate("/")}
           >
-            <FaArrowLeft /> Back
+            <RiArrowLeftLine /> Back
           </button>
         </div>
         <div className="flex flex-col gap-5">
           <div className="flex flex-col relative animate__animated animate__backInLeft">
-            <div className="font-outline-2 text-8xl text-customBlack font-black ">
+            <div className="font-outline-2  text-6xl md:text-8xl text-customBlack font-black ">
               EXPERIENCE
             </div>
-            <div className="text-dirtyWhite/80 text-2xl absolute bottom-0">
+            <div className="text-dirtyWhite/80  text-xl md:text-2xl absolute bottom-0">
               EXPERIENCE
             </div>
           </div>
           <div className="flex flex-col gap-10">
-            {experience.length > 0 &&
-              experience.map((data) => {
+            {experienceList?.length > 0 &&
+              experienceList?.map((data) => {
                 const { _id, position, date, desc, icon, image, link, delay } =
                   data ?? {};
                 return (
@@ -61,7 +92,7 @@ export default function ExperiencePage() {
                     delay={delay}
                   >
                     <div className="flex flex-row gap-5" key={_id}>
-                      <div className="basis-2/3">
+                      <div className=" flex md:basis-2/3">
                         <div className="flex flex-col gap-7">
                           <div className="flex flex-row gap-2 items-center">
                             <div className="p-3 rounded-full text-dirtyWhite bg-customGray w-fit">
@@ -78,11 +109,18 @@ export default function ExperiencePage() {
                           <div className="ml-5 pl-8 border-l-customGray border-l-2">
                             <div className="text-dirtyWhite/70 text-justify">
                               {desc}
+                              {/* {expanded ? desc : desc?.slice(0, 300)}
+                              <button
+                                onClick={toggleExpanded}
+                                className="text-customLightgray"
+                              >
+                                ...{expanded ? "see less" : "see more"}
+                              </button> */}
                             </div>
                           </div>
                         </div>
                       </div>
-                      <div className="basis-1/3 border justify-center items-center flex bg-dirtyWhite/80">
+                      <div className="basis-1/3 border justify-center items-center hidden md:flex bg-dirtyWhite/80">
                         <div className="p-5 ">
                           <img src={image} alt={link} />
                         </div>

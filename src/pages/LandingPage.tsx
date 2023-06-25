@@ -19,7 +19,7 @@ export default function LandingPage() {
     <div className="flex flex-row overflow-hidden bg-customBlack">
       <Navbar />
 
-      <div className="basis-4/6 z-30">
+      <div className="flex md:basis-4/6 z-30">
         <div className="flex flex-col gap-2 px-5 h-screen justify-center relative">
           <ScrollAnimation
             animateTo={{ x: 0 }}
@@ -34,7 +34,7 @@ export default function LandingPage() {
               }   font-extrabold  cursor-pointer w-fit transition delay-150 duration-300 ease-in-out hover:scale-90`}
               onClick={() => showAnimate("about")}
             >
-              <div className="font-outline-2 hover:text-customGray text-8xl text-customBlack font-black ">
+              <div className="font-outline-2 hover:text-customGray text-6xl md:text-8xl text-customBlack font-black ">
                 ABOUT
               </div>
             </div>
@@ -52,7 +52,7 @@ export default function LandingPage() {
                   : ""
               }cursor-pointer w-fit transition delay-150 duration-300 ease-in-out hover:scale-90`}
             >
-              <div className="font-outline-2 hover:text-customGray text-8xl text-customBlack font-black ">
+              <div className="font-outline-2 hover:text-customGray  text-6xl md:text-8xl text-customBlack font-black ">
                 PROJECT
               </div>
             </div>
@@ -70,14 +70,14 @@ export default function LandingPage() {
                   : ""
               }  cursor-pointer w-fit transition delay-150 duration-300 ease-in-out hover:scale-90`}
             >
-              <div className="font-outline-2 hover:text-customGray text-8xl text-customBlack font-black ">
+              <div className="font-outline-2 hover:text-customGray  text-6xl md:text-8xl text-customBlack font-black ">
                 EXPERIENCE
               </div>
             </div>
           </ScrollAnimation>
         </div>
       </div>
-      <div className="basis-2/6 flex justify-center items-center">
+      <div className="hidden md:basis-2/6 md:flex justify-center items-center">
         <Tech />
       </div>
     </div>

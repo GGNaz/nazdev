@@ -4,6 +4,7 @@ import "animate.css";
 import AboutPage from "./pages/AboutPage";
 import ProjectPage from "./pages/ProjectPage";
 import ExperiencePage from "./pages/ExperiencePage";
+import Contact from "./pages/Contact";
 function App() {
   return (
     <div className="bg-customBlack h-screen w-full">
@@ -12,6 +13,7 @@ function App() {
         <Route path="/about" element={<AboutPage />} />
         <Route path="/project" element={<ProjectPage />} />
         <Route path="/experience" element={<ExperiencePage />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
     </div>
   );

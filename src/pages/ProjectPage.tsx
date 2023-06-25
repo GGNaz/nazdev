@@ -2,9 +2,9 @@ import { useNavigate } from "react-router-dom";
 import netflix from "../assets/projects/netflix.png";
 import snakeandladder from "../assets/projects/snakeandladder.png";
 import apple from "../assets/projects/apple.png";
-import { FaArrowLeft } from "@react-icons/all-files/fa/FaArrowLeft";
-import ScrollAnimation from "../components/ScrollAnimation";
 
+import ScrollAnimation from "../components/ScrollAnimation";
+import { RiArrowLeftLine } from "@react-icons/all-files/ri/RiArrowLeftLine";
 export default function ProjectPage() {
   const navigate = useNavigate();
 
@@ -27,7 +27,7 @@ export default function ProjectPage() {
         "View the release date of specific movie",
         "View movie ratings and total votes",
       ],
-      delay: 0.5,
+      delay: 0.2,
       image: netflix,
     },
     {
@@ -46,7 +46,7 @@ export default function ProjectPage() {
         "Keeps track of the players' turns",
         "Checks if a player has reached or surpassed the final square, declaring them as the winner and ending the game.",
       ],
-      delay: 0.8,
+      delay: 0.3,
       image: snakeandladder,
     },
     {
@@ -68,27 +68,27 @@ export default function ProjectPage() {
         "Shows the breakdown of total payment",
         "View details of specific item",
       ],
-      delay: 0.5,
+      delay: 0.4,
       image: apple,
     },
   ];
   return (
     <div className="flex justify-center bg-customBlack pb-5">
-      <div className="flex flex-col gap-5 max-w-5xl w-full pt-5  ">
+      <div className="flex flex-col gap-5 max-w-5xl w-full p-5  ">
         <div>
           <button
             className="flex flex-row gap-2  text-customLightgray items-center"
-            onClick={() => navigate(-1)}
+            onClick={() => navigate("/")}
           >
-            <FaArrowLeft /> Back
+            <RiArrowLeftLine /> Back
           </button>
         </div>
         <div className="flex flex-col gap-5">
           <div className="flex flex-col relative animate__animated animate__backInLeft">
-            <div className="font-outline-2 text-8xl text-customBlack font-black ">
+            <div className="font-outline-2  text-6xl md:text-8xl text-customBlack font-black ">
               PROJECTS
             </div>
-            <div className="text-dirtyWhite/80 text-2xl absolute bottom-0">
+            <div className="text-dirtyWhite/80  text-xl md:text-2xl absolute bottom-0">
               PROJECTS
             </div>
           </div>
@@ -104,8 +104,10 @@ export default function ProjectPage() {
                     delay={delay}
                   >
                     <div
-                      className={`flex ${
-                        _id % 2 === 0 ? "flex-row-reverse" : "flex-row"
+                      className={`flex flex-col md:${
+                        _id % 2 === 0
+                          ? "flex-row md:flex-row-reverse"
+                          : "flex-row"
                       }  gap-5 `}
                       key={_id}
                     >
