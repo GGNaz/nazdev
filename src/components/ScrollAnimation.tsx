@@ -29,7 +29,8 @@ export default function ScrollAnimation({
   }, [isInView, mainControls]);
 
   return (
-    <div ref={ref} className={`${width} relative overflow-hidden`}>
+    <div ref={ref} className={`${width} relative`}>
+      {/* overflow-hidden */}
       <motion.div
         variants={{
           hidden: { opacity: 0, ...animateFrom },

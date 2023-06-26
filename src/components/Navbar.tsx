@@ -1,5 +1,5 @@
-
-import { FaRegEnvelope } from "@react-icons/all-files/fa/FaRegEnvelope";
+import { FaGithub } from "@react-icons/all-files/fa/FaGithub";
+import { FaMoon } from "@react-icons/all-files/fa/FaMoon";
 import { useNavigate } from "react-router-dom";
 
 export default function Navbar() {
@@ -28,12 +28,24 @@ export default function Navbar() {
             <FaGithub />{" "}
           </a> */}
         </div>
-        <div>
+        <div className="flex flex-row gap-2">
+          <a
+            href="https://github.com/GGNaz"
+            target="blank"
+            rel="noopener noreferrer"
+          >
+            <div className="flex gap-2 items-center text-white hover:bg-customGray/50   text-xl border p-2">
+              <FaGithub />
+            </div>
+          </a>
+          <div className="flex gap-2 items-center text-white hover:bg-customGray/50   text-xl border p-2">
+            <FaMoon />
+          </div>
           <button
-            className="flex gap-2 items-center text-white hover:bg-customGray  text-xl border p-2"
+            className="flex gap-2 items-center text-white hover:bg-customGray/50   text-xl border p-2"
             onClick={() => navigate("/contact")}
           >
-            <FaRegEnvelope /> <span className="text-sm">Get in touch</span>
+            <span className="text-xs">CONTACT ME</span>
           </button>
         </div>
       </div>

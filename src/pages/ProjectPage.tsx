@@ -110,7 +110,6 @@ export default function ProjectPage() {
                           ? "flex-row md:flex-row-reverse"
                           : "flex-row"
                       }  gap-5 `}
-                    
                     >
                       <div className="basis-1/2  flex flex-col cursor-pointer bg-white h-fit">
                         <img src={image} alt={title} />
@@ -133,7 +132,9 @@ export default function ProjectPage() {
                       <div className="basis-1/2 flex flex-col   p-2">
                         <div className="flex flex-col">
                           <div className="text-dirtyWhite text-lg">{title}</div>
-                          <div className="text-dirtyWhite/50">{desc}</div>
+                          <div className="text-dirtyWhite/50 indent-8">
+                            {desc}
+                          </div>
                         </div>
                         <div className="flex flex-col">
                           <div className="text-dirtyWhite text-lg">
@@ -143,8 +144,6 @@ export default function ProjectPage() {
                             {func.map((res) => (
                               <li>{res}</li>
                             ))}
-                          
-                           
                           </div>
                         </div>
                       </div>
