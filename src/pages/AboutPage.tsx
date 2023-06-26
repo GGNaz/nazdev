@@ -62,7 +62,7 @@ export default function AboutPage() {
           delay={0.2}
         >
           <div className="flex flex-col md:flex-row gap-10 items-center">
-            <img src={profile} className="h-[60vh]" alt="profile" />
+            <img src={profile} className="h-[60vh] " alt="profile" />
 
             <div className="flex flex-col gap-5">
               <ScrollAnimation
@@ -105,10 +105,10 @@ export default function AboutPage() {
                   </div>
                   <div className="flex flex-row gap-3">
                     {hobbies?.map(({ _id, icon, title }) => (
-                      <a title={title}>
+                      <a title={title}    key={_id}>
                         <div
                           className="p-2 bg-customGray text-dirtyWhite "
-                          key={_id}
+                       
                         >
                           {icon}
                         </div>

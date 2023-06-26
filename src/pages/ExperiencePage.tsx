@@ -45,7 +45,6 @@ export default function ExperiencePage() {
     isExpand?: boolean;
   };
 
-  const [expanded, setExpanded] = useState<boolean>(false);
   const [experienceList, setExperience] = useState<ExperienceProps[]>([]);
 
   useEffect(() => {
@@ -53,12 +52,6 @@ export default function ExperiencePage() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // const toggleExpanded = (index: number) => {
-  //   setExpanded(!expanded);
-  //   const copyData = [...experience];
-  //   copyData[index - 1].isExpand = !expanded;
-  //   setExperience(copyData);
-  // };
 
   return (
     <div className="flex justify-center bg-customBlack pb-5">
@@ -90,8 +83,9 @@ export default function ExperiencePage() {
                     animateTo={{ y: 0 }}
                     animateFrom={{ y: 70 }}
                     delay={delay}
+                    key={_id}
                   >
-                    <div className="flex flex-row gap-5" key={_id}>
+                    <div className="flex flex-row gap-5" >
                       <div className=" flex md:basis-2/3">
                         <div className="flex flex-col gap-7">
                           <div className="flex flex-row gap-2 items-center">
@@ -109,13 +103,7 @@ export default function ExperiencePage() {
                           <div className="ml-5 pl-8 border-l-customGray border-l-2">
                             <div className="text-dirtyWhite/70 text-justify">
                               {desc}
-                              {/* {expanded ? desc : desc?.slice(0, 300)}
-                              <button
-                                onClick={toggleExpanded}
-                                className="text-customLightgray"
-                              >
-                                ...{expanded ? "see less" : "see more"}
-                              </button> */}
+                             
                             </div>
                           </div>
                         </div>

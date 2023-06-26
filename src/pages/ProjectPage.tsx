@@ -102,6 +102,7 @@ export default function ProjectPage() {
                     animateTo={{ y: 0 }}
                     animateFrom={{ y: 70 }}
                     delay={delay}
+                    key={_id}
                   >
                     <div
                       className={`flex flex-col md:${
@@ -109,7 +110,7 @@ export default function ProjectPage() {
                           ? "flex-row md:flex-row-reverse"
                           : "flex-row"
                       }  gap-5 `}
-                      key={_id}
+                    
                     >
                       <div className="basis-1/2  flex flex-col cursor-pointer bg-white h-fit">
                         <img src={image} alt={title} />
@@ -142,6 +143,8 @@ export default function ProjectPage() {
                             {func.map((res) => (
                               <li>{res}</li>
                             ))}
+                          
+                           
                           </div>
                         </div>
                       </div>

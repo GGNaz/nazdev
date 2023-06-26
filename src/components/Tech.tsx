@@ -1,9 +1,7 @@
-import { useEffect } from "react";
-import TagCloud from "TagCloud";
 
+import { TagCloud, TagCloudOptions } from "@frank-mayer/react-tag-cloud";
 export default function Tech() {
-  useEffect(() => {
-    return () => {
+
       const texts = [
         "ReactJS",
         "NodeJs",
@@ -21,21 +19,23 @@ export default function Tech() {
         "Google Map API's",
         "Socket",
       ];
-      const options = {
-        radius: 200,
-        keep: true,
-      };
-      const container = ".tagcloud";
 
-      TagCloud(container, texts, options);
-    };
-  }, []);
 
   return (
-    <div className="flex  justify-center w-full">
-      <div className="flex justify-center items-center ">
-        <span className="tagcloud text-white text-md"></span>
-      </div>
+    <div className="flex w-full justify-center items-center">
+    
+        <TagCloud
+        options={(w: Window & typeof globalThis): TagCloudOptions => ({
+            radius: Math.min(500, w.innerWidth, w.innerHeight) / 2,
+            maxSpeed: "normal",
+        })}
+        className="text-white"
+        onClick={(tag: string, ev: MouseEvent) => alert(tag)}
+        // onClickOptions={{ passive: true }}
+    >
+        {texts}
+    </TagCloud>
+    
     </div>
   );
 }

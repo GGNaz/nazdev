@@ -10,15 +10,17 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emailjs/browser": "^3.11.0",
+    "@frank-mayer/react-tag-cloud": "^1.2.1",
     "@heroicons/react": "^2.0.18",
     "@react-icons/all-files": "^4.1.0",
     "animate.css": "^4.1.1",
     "framer-motion": "^10.12.16",
+    "lottie-react": "^2.4.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.9.0",
     "react-router-dom": "^6.11.2",
-    "TagCloud": "^2.3.2",
     "tailwind-scrollbar": "^3.0.4"
   },
   "devDependencies": {
