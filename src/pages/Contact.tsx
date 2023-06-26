@@ -48,11 +48,8 @@ export default function Contact() {
       return setValidate(true);
     else {
       setValidate(false);
-      setLoading(true);
-      setTimeout(() => {
-        setLoading(false);
-      }, 3000);
-      // return sendEmail();
+
+      return sendEmail();
     }
   };
 
