@@ -30,7 +30,7 @@ export default function Tech() {
             maxSpeed: "normal",
         })}
         className="text-white"
-        onClick={(tag: string, ev: MouseEvent) => alert(tag)}
+        onClick={(tag: string) => alert(tag)}
         // onClickOptions={{ passive: true }}
     >
         {texts}

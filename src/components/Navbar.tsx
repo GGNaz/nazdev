@@ -1,5 +1,4 @@
-import { FaLinkedinIn } from "@react-icons/all-files/fa/FaLinkedinIn";
-import { FaGithub } from "@react-icons/all-files/fa/FaGithub";
+
 import { FaRegEnvelope } from "@react-icons/all-files/fa/FaRegEnvelope";
 import { useNavigate } from "react-router-dom";
 
