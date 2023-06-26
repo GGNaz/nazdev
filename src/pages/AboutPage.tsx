@@ -2,37 +2,33 @@ import { useNavigate } from "react-router-dom";
 import profile from "../assets/Images/profile.jpg";
 import ScrollAnimation from "../components/ScrollAnimation";
 import { RiArrowLeftLine } from "@react-icons/all-files/ri/RiArrowLeftLine";
-import { RiGamepadLine } from "@react-icons/all-files/Ri/RiGamepadLine";
-import { RiYoutubeLine } from "@react-icons/all-files/Ri/RiYoutubeLine";
-import { RiRidingLine } from "@react-icons/all-files/Ri/RiRidingLine";
-import { RiMusic2Line } from "@react-icons/all-files/Ri/RiMusic2Line";
-import { RiCodeSSlashLine } from "@react-icons/all-files/Ri/RiCodeSSlashLine";
+
 export default function AboutPage() {
   const navigate = useNavigate();
   const hobbies = [
     {
       _id: 1,
-      icon: <RiGamepadLine size={25} />,
+      icon: "Playing games",
       title: "Playing games",
     },
     {
       _id: 2,
-      icon: <RiCodeSSlashLine size={25} />,
+      icon: "Coding",
       title: "Coding",
     },
     {
       _id: 3,
-      icon: <RiRidingLine size={25} />,
+      icon: "Biking",
       title: "Biking",
     },
     {
       _id: 4,
-      icon: <RiMusic2Line size={25} />,
+      icon: "Listen to music",
       title: "Listen to music",
     },
     {
       _id: 5,
-      icon: <RiYoutubeLine size={25} />,
+      icon: "Watching anime or movies",
       title: "Watching anime or movies",
     },
   ];
