@@ -85,10 +85,10 @@ export default function ProjectPage() {
         </div>
         <div className="flex flex-col gap-5">
           <div className="flex flex-col relative animate__animated animate__backInLeft">
-            <div className="font-outline-2  text-6xl md:text-8xl text-customBlack font-black ">
+            <div className="font-outline-2  text-5xl  md:text-6xl lg:text-8xl text-customBlack font-black ">
               PROJECTS
             </div>
-            <div className="text-dirtyWhite/80  text-xl md:text-2xl absolute bottom-0">
+            <div className="text-dirtyWhite/80 text-md md:text-xl lg:text-2xl absolute bottom-0">
               PROJECTS
             </div>
           </div>

@@ -19,8 +19,8 @@ export default function LandingPage() {
     <div className="flex flex-row overflow-hidden bg-customBlack">
       <Navbar />
 
-      <div className="flex md:basis-4/6 z-30">
-        <div className="flex flex-col gap-2 px-5 h-screen justify-center relative">
+      <div className="flex  md:justify-normal justify-center items-start md:items-center w-full md:basis-4/6 z-30">
+        <div className="flex flex-col gap-2 px-5 h-screen justify-center items-center md:items-start relative">
           <ScrollAnimation
             animateTo={{ x: 0 }}
             animateFrom={{ x: 75 }}
@@ -34,7 +34,7 @@ export default function LandingPage() {
               }   font-extrabold  cursor-pointer w-fit transition delay-150 duration-300 ease-in-out hover:scale-90`}
               onClick={() => showAnimate("about")}
             >
-              <div className="font-outline-2 hover:text-customGray text-6xl md:text-8xl text-customBlack font-black ">
+              <div className="font-outline-2 hover:text-customGray text-5xl md:text-6xl lg:text-8xl text-customBlack font-black ">
                 ABOUT
               </div>
             </div>
@@ -52,7 +52,7 @@ export default function LandingPage() {
                   : ""
               }cursor-pointer w-fit transition delay-150 duration-300 ease-in-out hover:scale-90`}
             >
-              <div className="font-outline-2 hover:text-customGray  text-6xl md:text-8xl text-customBlack font-black ">
+              <div className="font-outline-2 hover:text-customGray  text-5xl md:text-6xl lg:text-8xl text-customBlack font-black ">
                 PROJECT
               </div>
             </div>
@@ -70,7 +70,7 @@ export default function LandingPage() {
                   : ""
               }  cursor-pointer w-fit transition delay-150 duration-300 ease-in-out hover:scale-90`}
             >
-              <div className="font-outline-2 hover:text-customGray  text-6xl md:text-8xl text-customBlack font-black ">
+              <div className="font-outline-2 hover:text-customGray   text-5xl md:text-6xl lg:text-8xl text-customBlack font-black ">
                 EXPERIENCE
               </div>
             </div>

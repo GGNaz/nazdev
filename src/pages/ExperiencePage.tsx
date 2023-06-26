@@ -52,7 +52,6 @@ export default function ExperiencePage() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-
   return (
     <div className="flex justify-center bg-customBlack pb-5">
       <div className="flex flex-col gap-5 max-w-5xl w-full p-5">
@@ -66,10 +65,10 @@ export default function ExperiencePage() {
         </div>
         <div className="flex flex-col gap-5">
           <div className="flex flex-col relative animate__animated animate__backInLeft">
-            <div className="font-outline-2  text-6xl md:text-8xl text-customBlack font-black ">
+            <div className="font-outline-2 text-5xl md:text-6xl lg:text-8xl text-customBlack font-black ">
               EXPERIENCE
             </div>
-            <div className="text-dirtyWhite/80  text-xl md:text-2xl absolute bottom-0">
+            <div className="text-dirtyWhite/80  text-md md:text-xl lg:text-2xl absolute bottom-0">
               EXPERIENCE
             </div>
           </div>
@@ -85,7 +84,7 @@ export default function ExperiencePage() {
                     delay={delay}
                     key={_id}
                   >
-                    <div className="flex flex-row gap-5" >
+                    <div className="flex flex-row gap-5">
                       <div className=" flex md:basis-2/3">
                         <div className="flex flex-col gap-7">
                           <div className="flex flex-row gap-2 items-center">
@@ -103,7 +102,6 @@ export default function ExperiencePage() {
                           <div className="ml-5 pl-8 border-l-customGray border-l-2">
                             <div className="text-dirtyWhite/70 text-justify">
                               {desc}
-                             
                             </div>
                           </div>
                         </div>

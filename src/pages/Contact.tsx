@@ -291,7 +291,7 @@ export default function Contact() {
         <Sending />
       ) : (
         <div className="flex justify-center bg-customBlack pb-5">
-          <div className="flex flex-col gap-5 max-w-5xl w-full pt-5  ">
+          <div className="flex flex-col gap-5 max-w-5xl w-full p-5  ">
             <div>
               <button
                 className="flex flex-row gap-2  text-customLightgray items-center"
@@ -302,10 +302,10 @@ export default function Contact() {
             </div>
             <div className="flex flex-col gap-8 ">
               <div className="flex flex-col relative animate__animated animate__backInLeft">
-                <div className="font-outline-2  text-6xl md:text-8xl text-customBlack font-black ">
+                <div className="font-outline-2 text-4xl md:text-6xl lg:text-8xl text-customBlack font-black ">
                   CONTACT ME
                 </div>
-                <div className="text-dirtyWhite/80 text-xl md:text-2xl absolute bottom-0">
+                <div className="text-dirtyWhite/80 text-xs md:text-xl lg:text-2xl absolute bottom-0">
                   CONTACT ME
                 </div>
               </div>

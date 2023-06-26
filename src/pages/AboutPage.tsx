@@ -45,10 +45,10 @@ export default function AboutPage() {
           </button>
         </div>
         <div className="flex flex-col relative animate__animated animate__backInLeft">
-          <div className="font-outline-2  text-6xl md:text-8xl text-customBlack font-black ">
+          <div className="font-outline-2 text-5xl  md:text-6xl lg:text-8xl text-customBlack font-black ">
             ABOUT ME
           </div>
-          <div className="text-customLightgray  text-xl md:text-2xl absolute bottom-0">
+          <div className="text-customLightgray text-md md:text-xl lg:text-2xl absolute bottom-0">
             ABOUT ME
           </div>
         </div>
@@ -57,8 +57,12 @@ export default function AboutPage() {
           animateFrom={{ y: 50 }}
           delay={0.2}
         >
-          <div className="flex flex-col md:flex-row gap-10 items-center">
-            <img src={profile} className="h-[60vh] " alt="profile" />
+          <div className="flex flex-col md:flex-row gap-10 items-stretch md:items-center p-5">
+            <img
+              src={profile}
+              className="h-[50vh] md:h-[60vh] "
+              alt="profile"
+            />
 
             <div className="flex flex-col gap-5">
               <ScrollAnimation
@@ -99,14 +103,11 @@ export default function AboutPage() {
                   <div className="text-xl text-dirtyWhite/90">
                     Things I love
                   </div>
-                  <div className="flex flex-row gap-3">
+                  <div className="flex flex-col md:flex-row gap-3">
                     {hobbies?.map(({ _id, icon, title }) => (
-                      <a title={title}    key={_id}>
-                        <div
-                          className="p-2 bg-customGray text-dirtyWhite "
-                       
-                        >
-                          {icon}
+                      <a title={title} key={_id}>
+                        <div className="p-2 bg-customGray h-full w-full flex flex-col justify-center text-dirtyWhite ">
+                          <span>{icon}</span>
                         </div>
                       </a>
                     ))}
