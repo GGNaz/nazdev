@@ -73,7 +73,7 @@ export default function ProjectPage() {
     },
   ];
   return (
-    <div className="flex justify-center bg-customBlack pb-5">
+    <div className="flex justify-center bg-customWhite dark:bg-customBlack pb-5">
       <div className="flex flex-col gap-5 max-w-5xl w-full p-5  ">
         <div>
           <button
@@ -85,10 +85,10 @@ export default function ProjectPage() {
         </div>
         <div className="flex flex-col gap-5">
           <div className="flex flex-col relative animate__animated animate__backInLeft">
-            <div className="font-outline-2  text-5xl  md:text-6xl lg:text-8xl text-customBlack font-black ">
+            <div className="font-outline-2  text-5xl  md:text-6xl lg:text-8xl text-customWhite dark:text-customBlack font-black ">
               PROJECTS
             </div>
-            <div className="text-dirtyWhite/80 text-md md:text-xl lg:text-2xl absolute bottom-0">
+            <div className="text-customBlack font-bold dark:text-customLightgray text-md md:text-xl lg:text-2xl absolute bottom-0">
               PROJECTS
             </div>
           </div>
@@ -109,12 +109,12 @@ export default function ProjectPage() {
                         _id % 2 === 0
                           ? "flex-row md:flex-row-reverse"
                           : "flex-row"
-                      }  gap-5 `}
+                      }  gap-5 bg-slate-200 dark:bg-customGray/30 p-5`}
                     >
-                      <div className="basis-1/2  flex flex-col cursor-pointer bg-white h-fit">
+                      <div className="basis-1/2  flex flex-col cursor-pointer bg-customBlack dark:bg-white h-fit">
                         <img src={image} alt={title} />
                         <div className="flex flex-col gap-2 p-2">
-                          <div className="flex flex-row gap-1">
+                          <div className="flex flex-row gap-1 divide-x divide-customLightgray">
                             {tech.map(({ name, link }, index) => (
                               <a
                                 href={link}
@@ -122,7 +122,7 @@ export default function ProjectPage() {
                                 rel="noopener noreferrer"
                                 key={index}
                               >
-                                <div className="text-xs bg-customBlack hover:bg-white hover:text-customBlack hover:border hover:border-customBlack w-fit text-customLightgray px-2 py-1 ">
+                                <div className="text-xs hover:text-dirtyWhite dark:hover:text-customBlack/50 w-fit text-customLightgray dark:text-customBlack px-2">
                                   {name}
                                 </div>
                               </a>
@@ -132,16 +132,16 @@ export default function ProjectPage() {
                       </div>
                       <div className="basis-1/2 flex flex-col   p-2">
                         <div className="flex flex-col">
-                          <div className="text-dirtyWhite text-lg">{title}</div>
-                          <div className="text-dirtyWhite/50 indent-8">
+                          <div className="text-customBlack dark:text-dirtyWhite text-lg font-medium">{title}</div>
+                          <div className="text-customGray dark:text-dirtyWhite/50 indent-8">
                             {desc}
                           </div>
                         </div>
                         <div className="flex flex-col">
-                          <div className="text-dirtyWhite text-lg">
+                          <div className="text-customBlack dark:text-dirtyWhite text-lg font-medium">
                             What's on the app?
                           </div>
-                          <div className="p-2 text-dirtyWhite/70">
+                          <div className="p-2 text-customGray dark:text-dirtyWhite/50">
                             {func.map((res, index) => (
                               <li key={index}>{res}</li>
                             ))}

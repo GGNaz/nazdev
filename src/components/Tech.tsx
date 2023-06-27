@@ -29,7 +29,7 @@ export default function Tech() {
             radius: Math.min(500, w.innerWidth, w.innerHeight) / 2,
             maxSpeed: "normal",
         })}
-        className="text-white"
+        className="dark:text-white text-customBlack"
         onClick={(tag: string) => alert(tag)}
         // onClickOptions={{ passive: true }}
     >

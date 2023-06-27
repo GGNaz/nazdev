@@ -34,7 +34,7 @@ export default function LandingPage() {
               }   font-extrabold  cursor-pointer w-fit transition delay-150 duration-300 ease-in-out hover:scale-90`}
               onClick={() => showAnimate("about")}
             >
-              <div className="font-outline-2 hover:text-customGray text-5xl md:text-6xl lg:text-8xl text-customBlack font-black ">
+              <div className="font-outline-2 hover:text-customGray dark:hover:text-customGray text-5xl md:text-6xl lg:text-8xl text-customWhite dark:text-customBlack font-black ">
                 ABOUT
               </div>
             </div>
@@ -52,7 +52,7 @@ export default function LandingPage() {
                   : ""
               }cursor-pointer w-fit transition delay-150 duration-300 ease-in-out hover:scale-90`}
             >
-              <div className="font-outline-2 hover:text-customGray  text-5xl md:text-6xl lg:text-8xl text-customBlack font-black ">
+              <div className="font-outline-2 hover:text-customGray dark:hover:text-customGray text-5xl md:text-6xl lg:text-8xl text-customWhite dark:text-customBlack font-black ">
                 PROJECT
               </div>
             </div>
@@ -70,7 +70,7 @@ export default function LandingPage() {
                   : ""
               }  cursor-pointer w-fit transition delay-150 duration-300 ease-in-out hover:scale-90`}
             >
-              <div className="font-outline-2 hover:text-customGray   text-5xl md:text-6xl lg:text-8xl text-customBlack font-black ">
+              <div className="font-outline-2 hover:text-customGray dark:hover:text-customGray  text-5xl md:text-6xl lg:text-8xl text-customWhite dark:text-customBlack font-black ">
                 EXPERIENCE
               </div>
             </div>

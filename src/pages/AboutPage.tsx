@@ -34,10 +34,10 @@ export default function AboutPage() {
   ];
   return (
     <div className="flex justify-center ">
-      <div className="flex flex-col gap-5 max-w-5xl w-full p-5  bg-customBlack">
+      <div className="flex flex-col gap-5 max-w-5xl w-full p-5 bg-customWhite dark:bg-customBlack">
         <div>
           <button
-            className="flex flex-row gap-2  text-customLightgray items-center"
+            className="flex flex-row gap-2 text-customBlack dark:text-customLightgray items-center"
             onClick={() => navigate("/")}
           >
             {" "}
@@ -45,18 +45,18 @@ export default function AboutPage() {
           </button>
         </div>
         <div className="flex flex-col relative animate__animated animate__backInLeft">
-          <div className="font-outline-2 text-5xl  md:text-6xl lg:text-8xl text-customBlack font-black ">
+          <div className="font-outline-2 text-5xl  md:text-6xl lg:text-8xl text-customWhite dark:text-customBlack font-black ">
             ABOUT ME
           </div>
-          <div className="text-customLightgray text-md md:text-xl lg:text-2xl absolute bottom-0">
+          <div className="text-customBlack font-bold dark:text-customLightgray text-md md:text-xl lg:text-2xl absolute bottom-0">
             ABOUT ME
           </div>
         </div>
-        <ScrollAnimation
+        {/* <ScrollAnimation
           animateTo={{ y: 0 }}
           animateFrom={{ y: 50 }}
           delay={0.2}
-        >
+        > */}
           <div className="flex flex-col md:flex-row gap-10 items-stretch md:items-center p-5">
             <img
               src={profile}
@@ -70,7 +70,7 @@ export default function AboutPage() {
                 animateFrom={{ y: 50 }}
                 delay={0.3}
               >
-                <div className="text-2xl md:text-4xl font-bold text-dirtyWhite/90">
+                <div className="text-2xl md:text-4xl font-bold text-customBlack dark:text-dirtyWhite/90">
                   Nazer Somera
                 </div>
               </ScrollAnimation>
@@ -79,7 +79,7 @@ export default function AboutPage() {
                 animateFrom={{ y: 50 }}
                 delay={0.4}
               >
-                <div className="text-customLightgray flex flex-col gap-2 text-justify text-md md:text-lg">
+                <div className="text-customGray dark:text-customLightgray flex flex-col gap-2 text-justify text-md md:text-lg">
                   <div>
                     Hello! I'm Naz, a highly skilled and innovative front-end
                     developer with a passion for creating immersive and
@@ -100,13 +100,13 @@ export default function AboutPage() {
                 delay={0.5}
               >
                 <div className="flex flex-col gap-1">
-                  <div className="text-xl text-dirtyWhite/90">
+                  <div className="text-xl text-customBlack dark:text-dirtyWhite/90">
                     Things I love
                   </div>
                   <div className="flex flex-col md:flex-row gap-3">
                     {hobbies?.map(({ _id, icon, title }) => (
                       <a title={title} key={_id}>
-                        <div className="p-2 bg-customGray h-full w-full flex flex-col justify-center text-dirtyWhite ">
+                        <div className="p-2 bg-customWhite dark:bg-customGray h-full w-full flex flex-col justify-center text-customGray border border-customGray dark:text-dirtyWhite ">
                           <span>{icon}</span>
                         </div>
                       </a>
@@ -116,7 +116,7 @@ export default function AboutPage() {
               </ScrollAnimation>
             </div>
           </div>
-        </ScrollAnimation>
+        {/* </ScrollAnimation> */}
       </div>
     </div>
   );
