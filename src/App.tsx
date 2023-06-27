@@ -7,7 +7,7 @@ import ExperiencePage from "./pages/ExperiencePage";
 import Contact from "./pages/Contact";
 function App() {
   return (
-    <div className="bg-customBlack h-screen w-full scroll-smooth">
+    <div className="bg-dirtyWhite dark:bg-customBlack h-screen w-full scroll-smooth">
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/about" element={<AboutPage />} />

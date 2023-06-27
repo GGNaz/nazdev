@@ -16,7 +16,7 @@ export default function LandingPage() {
   };
 
   return (
-    <div className="flex flex-row overflow-hidden bg-customBlack">
+    <div className="flex flex-row overflow-hidden bg-dirtyWhite dark:bg-customBlack">
       <Navbar />
 
       <div className="flex  md:justify-normal justify-center items-start md:items-center w-full md:basis-4/6 z-30">

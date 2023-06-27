@@ -48,7 +48,6 @@ export default function Contact() {
       return setValidate(true);
     else {
       setValidate(false);
-
       return sendEmail();
     }
   };
@@ -90,7 +89,7 @@ export default function Contact() {
           <ScrollAnimation
             animateTo={{ y: 0 }}
             animateFrom={{ y: 50 }}
-            delay={0.5}
+            delay={0.2}
           >
             <div className="flex flex-col">
               <div className="text-dirtyWhite/80 text-xs">First name</div>
@@ -113,7 +112,7 @@ export default function Contact() {
           <ScrollAnimation
             animateTo={{ y: 0 }}
             animateFrom={{ y: 50 }}
-            delay={0.5}
+            delay={0.3}
           >
             <div className="flex flex-col">
               <div className="text-dirtyWhite/80 text-xs">Last name</div>
@@ -138,7 +137,7 @@ export default function Contact() {
             <ScrollAnimation
               animateTo={{ y: 0 }}
               animateFrom={{ y: 50 }}
-              delay={0.7}
+              delay={0.4}
             >
               <div className="flex flex-col col-span-2">
                 <div className="text-dirtyWhite/80 text-xs">Email</div>
@@ -164,7 +163,7 @@ export default function Contact() {
             <ScrollAnimation
               animateTo={{ y: 0 }}
               animateFrom={{ y: 50 }}
-              delay={0.7}
+              delay={0.5}
             >
               <div className="flex flex-col col-span-2">
                 <div className="text-dirtyWhite/80 text-xs">
@@ -188,7 +187,7 @@ export default function Contact() {
             <ScrollAnimation
               animateTo={{ y: 0 }}
               animateFrom={{ y: 50 }}
-              delay={0.9}
+              delay={0.6}
             >
               <div className="flex flex-col col-span-2">
                 <div className="text-dirtyWhite/80 text-xs">Message</div>
@@ -212,7 +211,7 @@ export default function Contact() {
           <ScrollAnimation
             animateTo={{ y: 0 }}
             animateFrom={{ y: 50 }}
-            delay={1.1}
+            delay={0.7}
           >
             <div
               className="flex flex-col col-span-1 bg-customGray text-dirtyWhite/70 py-2"
@@ -234,7 +233,7 @@ export default function Contact() {
             <ScrollAnimation
               animateTo={{ y: 0 }}
               animateFrom={{ y: 50 }}
-              delay={0.5}
+              delay={0.1}
             >
               <a
                 href="https://www.facebook.com/RazenSe"
@@ -249,7 +248,7 @@ export default function Contact() {
             <ScrollAnimation
               animateTo={{ y: 0 }}
               animateFrom={{ y: 50 }}
-              delay={0.5}
+              delay={0.1}
             >
               <a
                 href="https://www.linkedin.com/in/nazer-somera-b7b598223/"
@@ -266,7 +265,7 @@ export default function Contact() {
         <ScrollAnimation
           animateTo={{ y: 0 }}
           animateFrom={{ y: 50 }}
-          delay={0.5}
+          delay={0.1}
         >
           <div className="flex flex-row gap-3 ">
             <div className="w-full flex flex-col justify-center">

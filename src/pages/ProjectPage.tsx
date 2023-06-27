@@ -115,11 +115,12 @@ export default function ProjectPage() {
                         <img src={image} alt={title} />
                         <div className="flex flex-col gap-2 p-2">
                           <div className="flex flex-row gap-1">
-                            {tech.map(({ name, link }) => (
+                            {tech.map(({ name, link }, index) => (
                               <a
                                 href={link}
                                 target="blank"
                                 rel="noopener noreferrer"
+                                key={index}
                               >
                                 <div className="text-xs bg-customBlack hover:bg-white hover:text-customBlack hover:border hover:border-customBlack w-fit text-customLightgray px-2 py-1 ">
                                   {name}
@@ -141,8 +142,8 @@ export default function ProjectPage() {
                             What's on the app?
                           </div>
                           <div className="p-2 text-dirtyWhite/70">
-                            {func.map((res) => (
-                              <li>{res}</li>
+                            {func.map((res, index) => (
+                              <li key={index}>{res}</li>
                             ))}
                           </div>
                         </div>
