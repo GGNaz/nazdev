@@ -1,29 +1,32 @@
-import { FaGithub } from "@react-icons/all-files/fa/FaGithub"; 
-import { FaMoon } from "@react-icons/all-files/fa/FaMoon";
-import { FaRegSun } from "@react-icons/all-files/fa/FaRegSun";
+import { FaGithub } from "@react-icons/all-files/fa/FaGithub";
+// import { FaMoon } from "@react-icons/all-files/fa/FaMoon";
+// import { FaRegSun } from "@react-icons/all-files/fa/FaRegSun";
+// import { BsBrightnessHigh } from "@react-icons/all-files/bs/BsBrightnessHigh";
+import * as BSIcon from "react-icons/bs";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 export default function Navbar() {
   const navigate = useNavigate();
-  const [ theme, setTheme ] = useState<string>(localStorage.theme)
-  console.log("🚀 ~ file: Navbar.tsx:10 ~ Navbar ~ theme:", theme)
+  const [theme, setTheme] = useState<string>(localStorage.theme);
+  console.log("🚀 ~ file: Navbar.tsx:10 ~ Navbar ~ theme:", theme);
 
-  const changeTheme = (theme:string) => {
+  const changeTheme = (theme: string) => {
+    if (
+      localStorage.theme === "dark" ||
+      (!("theme" in localStorage) &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches)
+    ) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
 
-if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-  document.documentElement.classList.add('dark')
-} else {
-  document.documentElement.classList.remove('dark')
-}
+    localStorage.theme = theme;
 
-localStorage.theme = theme
+    setTheme(theme);
+  };
 
-setTheme(theme)
-
-
-  }
-  
   return (
     <div className=" p-5 absolute top-0 left-0 z-50 w-full">
       <div className="flex flex-row justify-between dark:text-dirtyWhite text-customBlack">
@@ -45,10 +48,15 @@ setTheme(theme)
               <FaGithub />
             </div>
           </a>
-          <div className="flex gap-2 items-center hover:text-white hover:bg-customGray/50 cursor-pointer border-customBlack dark:border-dirtyWhite text-xl border p-2"
-          onClick={() => changeTheme(theme === 'light' ? 'dark' : 'light' )}
+          <div
+            className="flex gap-2 items-center hover:text-white hover:bg-customGray/50 cursor-pointer border-customBlack dark:border-dirtyWhite text-xl border p-2"
+            onClick={() => changeTheme(theme === "light" ? "dark" : "light")}
           >
-            {theme === "light" ? <FaMoon /> :  <FaRegSun/> }
+            {theme === "light" ? (
+              <BSIcon.BsMoonFill />
+            ) : (
+              <BSIcon.BsBrightnessHigh />
+            )}
           </div>
           <button
             className="flex gap-2 items-center justify-center hover:text-white hover:bg-customGray/50  border-customBlack dark:border-dirtyWhite text-xl border p-2"
