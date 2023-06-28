@@ -110,9 +110,9 @@ export default function ProjectPage() {
                         _id % 2 === 0
                           ? "flex-row md:flex-row-reverse"
                           : "flex-row"
-                      }  gap-5 bg-slate-200 dark:bg-customGray/30 p-5`}
+                      }  gap-5 bg-zinc-200 dark:bg-customGray/30 p-5`}
                     >
-                      <div className="basis-1/2  flex flex-col cursor-pointer bg-customBlack dark:bg-white h-fit">
+                      <div className="basis-1/2 flex flex-col cursor-pointer bg-customBlack dark:bg-white h-fit">
                         <img src={image} alt={title} />
                         <div className="flex flex-col gap-2 p-2">
                           <div className="flex flex-row gap-1 divide-x divide-customLightgray">
