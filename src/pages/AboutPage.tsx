@@ -34,8 +34,8 @@ export default function AboutPage() {
     },
   ];
   return (
-    <div className="flex justify-center ">
-      <div className="flex flex-col gap-5 max-w-5xl w-full p-5 bg-customWhite dark:bg-customBlack">
+    <div className="flex justify-center bg-customWhite dark:bg-customBlack">
+      <div className="flex flex-col gap-5 max-w-5xl w-full p-5 ">
         <div>
           <button
             className="flex flex-row gap-2 text-customBlack dark:text-customLightgray items-center"

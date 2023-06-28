@@ -98,10 +98,10 @@ export default function Contact() {
               <input
                 type="text"
                 autoComplete="off"
-                className={`h-10 px-2 text-customGray dark:text-dirtyWhite/60  border ${
+                className={`h-10 px-2 text-customGray dark:text-dirtyWhite/60   ${
                   errorpop(formVal?.user_firstname, validate)
-                    ? "border-red-700 border-2 dark:border-0"
-                    : "border-customGray"
+                    ? "border-red-700 border-2 dark:border"
+                    : "border-customGray border"
                 } w-full focus:outline-none bg-transparent`}
                 name="user_firstname"
                 value={formVal?.user_firstname}
@@ -123,10 +123,10 @@ export default function Contact() {
               <input
                 autoComplete="off"
                 type="text"
-                className={`h-10 px-2 text-customGray dark:text-dirtyWhite/60 border ${
+                className={`h-10 px-2 text-customGray dark:text-dirtyWhite/60  ${
                   errorpop(formVal?.user_lastname, validate)
-                    ? "border-red-700 border-2 dark:border-0"
-                    : "border-customGray"
+                    ? "border-red-700 border-2 dark:border"
+                    : "border-customGray border"
                 } w-full focus:outline-none bg-transparent`}
                 name="user_lastname"
                 value={formVal?.user_lastname}
@@ -151,10 +151,10 @@ export default function Contact() {
                   type="email"
                   required
                   autoComplete="off"
-                  className={`h-10 px-2 text-customGray dark:text-dirtyWhite/60 border ${
+                  className={`h-10 px-2 text-customGray dark:text-dirtyWhite/60  ${
                     errorpop(formVal?.user_email, validate)
-                      ? "border-red-700 border-2 dark:border-0"
-                      : "border-customGray"
+                      ? "border-red-700 border-2 dark:border"
+                      : "border-customGray border"
                   } w-full focus:outline-none bg-transparent`}
                   name="user_email"
                   value={formVal?.user_email}
@@ -203,10 +203,10 @@ export default function Contact() {
                   cols={30}
                   rows={4}
                   autoComplete="off"
-                  className={` px-2 text-customGray dark:text-dirtyWhite/60 border ${
+                  className={` px-2 text-customGray dark:text-dirtyWhite/60  ${
                     errorpop(formVal?.message, validate)
-                      ? "border-red-700 border-2 dark:border-0"
-                      : "border-customGray"
+                      ? "border-red-700 border-2 dark:border"
+                      : "border-customGray border"
                   } w-full focus:outline-none bg-transparent`}
                   name="message"
                   value={formVal?.message}
