@@ -30,6 +30,7 @@ export default function ProjectPage() {
       ],
       delay: 0.2,
       image: netflix,
+      link: "https://movie-finder-zeta-virid.vercel.app/",
     },
     {
       _id: 2,
@@ -49,6 +50,7 @@ export default function ProjectPage() {
       ],
       delay: 0.3,
       image: snakeandladder,
+      link: "https://snake-and-ladder-beta.vercel.app/",
     },
     {
       _id: 3,
@@ -71,6 +73,7 @@ export default function ProjectPage() {
       ],
       delay: 0.4,
       image: apple,
+      link: "https://apple-store-seven.vercel.app/",
     },
   ];
   return (
@@ -96,7 +99,7 @@ export default function ProjectPage() {
           <div className="flex flex-col gap-10">
             {projectList.length > 0 &&
               projectList.map((data) => {
-                const { _id, title, desc, func, tech, delay, image } =
+                const { _id, title, desc, func, tech, delay, image, link } =
                   data ?? {};
                 return (
                   <ScrollAnimation
@@ -115,13 +118,20 @@ export default function ProjectPage() {
                       <div className="basis-1/2  flex flex-col cursor-pointer bg-customBlack dark:bg-white h-fit">
                         <div className="flex relative">
                           <img src={image} alt={title} className="z-20" />
-                          <div className="absolute group/item text-customWhite w-full h-full hover:bg-customBlack/60 z-40">
-                            <div className="absolute h-full w-full flex justify-center items-center group/edit invisible  group-hover/item:visible">
-                              visit
-                            </div>
+
+                          <div className="absolute group/item text-customWhite w-full h-full hover:bg-customBlack/80 z-40">
+                            <a
+                              href={link}
+                              target="blank"
+                              rel="noopener noreferrer"
+                            >
+                              <div className=" absolute h-full w-full flex justify-center items-center group/edit invisible  group-hover/item:visible">
+                                <div className="">Demo</div>
+                              </div>
+                            </a>
                           </div>
                         </div>
-                       
+
                         <div className="flex flex-col gap-2 p-2">
                           <div className="flex flex-row gap-1 divide-x divide-customLightgray">
                             {tech.map(({ name, link }, index) => (
