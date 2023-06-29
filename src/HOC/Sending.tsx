@@ -7,10 +7,10 @@ export default function Sending() {
   useEffect(() => {
     setTimeout(() => {
       setShow(true);
-    }, 1500);
+    }, 2000);
   }, []);
   return (
-    <div className="flex h-screen w-full bg-customBlack justify-center items-center">
+    <div className="flex h-screen w-full bg-slate-300 dark:bg-customBlack justify-center items-center">
       {show ? (
         <Lottie animationData={success} loop={false} />
       ) : (

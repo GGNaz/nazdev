@@ -5,6 +5,7 @@ import apple from "../assets/projects/apple.png";
 
 import ScrollAnimation from "../components/ScrollAnimation";
 import { RiArrowLeftLine } from "@react-icons/all-files/ri/RiArrowLeftLine";
+import ContactNav from "../components/ContactNav";
 export default function ProjectPage() {
   const navigate = useNavigate();
 
@@ -92,7 +93,7 @@ export default function ProjectPage() {
               PROJECTS
             </div>
           </div>
-          <div className="flex flex-col gap-20">
+          <div className="flex flex-col gap-10">
             {projectList.length > 0 &&
               projectList.map((data) => {
                 const { _id, title, desc, func, tech, delay, image } =
@@ -109,7 +110,7 @@ export default function ProjectPage() {
                         _id % 2 === 0
                           ? "flex-row md:flex-row-reverse"
                           : "flex-row"
-                      }  gap-5 bg-slate-200 dark:bg-customGray/30 p-5`}
+                      }  gap-5 bg-zinc-200 dark:bg-customGray/30 p-5`}
                     >
                       <div className="basis-1/2  flex flex-col cursor-pointer bg-customBlack dark:bg-white h-fit">
                         <div className="flex relative">
@@ -140,7 +141,9 @@ export default function ProjectPage() {
                       </div>
                       <div className="basis-1/2 flex flex-col   p-2">
                         <div className="flex flex-col">
-                          <div className="text-customBlack dark:text-dirtyWhite text-lg font-medium">{title}</div>
+                          <div className="text-customBlack dark:text-dirtyWhite text-lg font-medium">
+                            {title}
+                          </div>
                           <div className="text-customGray dark:text-dirtyWhite/50 indent-8">
                             {desc}
                           </div>
@@ -163,6 +166,7 @@ export default function ProjectPage() {
           </div>
         </div>
       </div>
+      <ContactNav />
     </div>
   );
 }

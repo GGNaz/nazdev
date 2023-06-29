@@ -56,7 +56,7 @@ export default function Contact() {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
-    }, 2000);
+    }, 3000);
 
     if (!loading) {
       emailjs
@@ -85,21 +85,23 @@ export default function Contact() {
   const formLayout = () => {
     return (
       <div className="grid grid-rows-1 max-w-3xl">
-        <div className="grid grid-cols-2 gap-5">
+        <div className="grid grid-cols-2 gap-3">
           <ScrollAnimation
             animateTo={{ y: 0 }}
             animateFrom={{ y: 50 }}
             delay={0.2}
           >
-            <div className="flex flex-col">
-              <div className="text-dirtyWhite/80 text-xs">First name</div>
+            <div className="flex flex-col gap-1">
+              <div className="text-customBlack dark:text-dirtyWhite/80 text-xs">
+                First name
+              </div>
               <input
                 type="text"
                 autoComplete="off"
-                className={`h-10 px-2 text-dirtyWhite/60 border ${
+                className={`h-10 px-2 text-customGray dark:text-dirtyWhite/60   ${
                   errorpop(formVal?.user_firstname, validate)
-                    ? "border-red-700"
-                    : "border-customGray"
+                    ? "border-red-700 border-2 dark:border"
+                    : "border-customGray border"
                 } w-full focus:outline-none bg-transparent`}
                 name="user_firstname"
                 value={formVal?.user_firstname}
@@ -114,15 +116,17 @@ export default function Contact() {
             animateFrom={{ y: 50 }}
             delay={0.3}
           >
-            <div className="flex flex-col">
-              <div className="text-dirtyWhite/80 text-xs">Last name</div>
+            <div className="flex flex-col gap-1">
+              <div className="text-customBlack dark:text-dirtyWhite/80 text-xs">
+                Last name
+              </div>
               <input
                 autoComplete="off"
                 type="text"
-                className={`h-10 px-2 text-dirtyWhite/60 border ${
+                className={`h-10 px-2 text-customGray dark:text-dirtyWhite/60  ${
                   errorpop(formVal?.user_lastname, validate)
-                    ? "border-red-700"
-                    : "border-customGray"
+                    ? "border-red-700 border-2 dark:border"
+                    : "border-customGray border"
                 } w-full focus:outline-none bg-transparent`}
                 name="user_lastname"
                 value={formVal?.user_lastname}
@@ -133,22 +137,24 @@ export default function Contact() {
             </div>
           </ScrollAnimation>
 
-          <div className="flex flex-col col-span-2">
+          <div className="flex flex-col col-span-1">
             <ScrollAnimation
               animateTo={{ y: 0 }}
               animateFrom={{ y: 50 }}
               delay={0.4}
             >
-              <div className="flex flex-col col-span-2">
-                <div className="text-dirtyWhite/80 text-xs">Email</div>
+              <div className="flex flex-col col-span-2 gap-1">
+                <div className="text-customBlack dark:text-dirtyWhite/80 text-xs">
+                  Email
+                </div>
                 <input
                   type="email"
                   required
                   autoComplete="off"
-                  className={`h-10 px-2 text-dirtyWhite/60 border ${
+                  className={`h-10 px-2 text-customGray dark:text-dirtyWhite/60  ${
                     errorpop(formVal?.user_email, validate)
-                      ? "border-red-700"
-                      : "border-customGray"
+                      ? "border-red-700 border-2 dark:border"
+                      : "border-customGray border"
                   } w-full focus:outline-none bg-transparent`}
                   name="user_email"
                   value={formVal?.user_email}
@@ -159,20 +165,20 @@ export default function Contact() {
               </div>
             </ScrollAnimation>
           </div>
-          <div className="flex flex-col col-span-2">
+          <div className="flex flex-col col-span-1">
             <ScrollAnimation
               animateTo={{ y: 0 }}
               animateFrom={{ y: 50 }}
               delay={0.5}
             >
-              <div className="flex flex-col col-span-2">
-                <div className="text-dirtyWhite/80 text-xs">
+              <div className="flex flex-col col-span-2 gap-1">
+                <div className="text-customBlack dark:text-dirtyWhite/80 text-xs">
                   Company name (Optional)
                 </div>
                 <input
                   type="text"
                   autoComplete="off"
-                  className="h-10 px-2 text-dirtyWhite/60 border border-customGray w-full focus:outline-none bg-transparent"
+                  className="h-10 px-2 text-customGray dark:text-dirtyWhite/60 border border-customGray w-full focus:outline-none bg-transparent"
                   name="user_email"
                   value={formVal?.user_company}
                   onChange={(e) =>
@@ -189,15 +195,18 @@ export default function Contact() {
               animateFrom={{ y: 50 }}
               delay={0.6}
             >
-              <div className="flex flex-col col-span-2">
-                <div className="text-dirtyWhite/80 text-xs">Message</div>
+              <div className="flex flex-col col-span-2 gap-1">
+                <div className="text-customBlack dark:text-dirtyWhite/80 text-xs">
+                  Message
+                </div>
                 <textarea
                   cols={30}
+                  rows={4}
                   autoComplete="off"
-                  className={`h-10 px-2 text-dirtyWhite/60 border ${
+                  className={` px-2 text-customGray dark:text-dirtyWhite/60  ${
                     errorpop(formVal?.message, validate)
-                      ? "border-red-700"
-                      : "border-customGray"
+                      ? "border-red-700 border-2 dark:border"
+                      : "border-customGray border"
                   } w-full focus:outline-none bg-transparent`}
                   name="message"
                   value={formVal?.message}
@@ -208,18 +217,20 @@ export default function Contact() {
               </div>
             </ScrollAnimation>
           </div>
-          <ScrollAnimation
-            animateTo={{ y: 0 }}
-            animateFrom={{ y: 50 }}
-            delay={0.7}
+          <div
+            className="flex  flex-col col-span-2 w-full md:col-span-1 cursor-pointer"
+            onClick={() => checkfields()}
           >
-            <div
-              className="flex flex-col col-span-1 bg-customGray text-dirtyWhite/70 py-2"
-              onClick={() => checkfields()}
+            <ScrollAnimation
+              animateTo={{ y: 0 }}
+              animateFrom={{ y: 50 }}
+              delay={0.7}
             >
-              <button> Send message</button>
-            </div>
-          </ScrollAnimation>
+              <div className="flex h-10 justify-center items-center hover:bg-customBlack/80 dark:hover:bg-customGray/70 bg-customGray text-dirtyWhite/70 py-2">
+                <button className="text-sm"> Send message</button>
+              </div>
+            </ScrollAnimation>
+          </div>
         </div>
       </div>
     );
@@ -229,7 +240,7 @@ export default function Contact() {
     return (
       <div className="flex flex-col gap-5 max-w-3xl">
         <div className="grid grid-rows-1 max-w-3xl">
-          <div className="grid grid-cols-2 gap-5">
+          <div className="grid grid-cols-2 gap-3">
             <ScrollAnimation
               animateTo={{ y: 0 }}
               animateFrom={{ y: 50 }}
@@ -240,7 +251,7 @@ export default function Contact() {
                 target="blank"
                 rel="noopener noreferrer"
               >
-                <button className="h-10 hover:bg-customGray/50 flex flex-row gap-2 items-center px-2 text-dirtyWhite/60 border border-customGray w-full focus:outline-none bg-transparent">
+                <button className="h-10 hover:text-white hover:bg-customGray/50 flex flex-row gap-2 items-center px-2 text-customBlack dark:text-dirtyWhite/60 border border-customGray w-full focus:outline-none bg-transparent">
                   <FaFacebookSquare /> <span>Facebook</span>
                 </button>
               </a>
@@ -255,7 +266,7 @@ export default function Contact() {
                 target="blank"
                 rel="noopener noreferrer"
               >
-                <button className="h-10 hover:bg-customGray/50 flex flex-row gap-2 items-center px-2 text-dirtyWhite/60 border border-customGray w-full focus:outline-none bg-transparent">
+                <button className="h-10 hover:text-white hover:bg-customGray/50 flex flex-row gap-2 items-center px-2 text-customBlack dark:text-dirtyWhite/60 border border-customGray w-full focus:outline-none bg-transparent">
                   <FaLinkedin /> LinkedIn
                 </button>
               </a>
@@ -271,7 +282,7 @@ export default function Contact() {
             <div className="w-full flex flex-col justify-center">
               <div className="border-x-2  border w-full border-customLightgray" />
             </div>
-            <div className="text-dirtyWhite">OR</div>
+            <div className="text-customBlack dark:text-dirtyWhite">OR</div>
             <div className="w-full flex flex-col justify-center">
               <div className="border-x-2  border w-full border-customLightgray" />
             </div>
@@ -286,7 +297,7 @@ export default function Contact() {
       {loading ? (
         <Sending />
       ) : (
-        <div className="flex justify-center bg-customBlack pb-5">
+        <div className="flex justify-center bg-customWhite dark:bg-customBlack pb-5">
           <div className="flex flex-col gap-5 max-w-5xl w-full p-5  ">
             <div>
               <button
@@ -298,15 +309,17 @@ export default function Contact() {
             </div>
             <div className="flex flex-col gap-8 ">
               <div className="flex flex-col relative animate__animated animate__backInLeft">
-                <div className="font-outline-2 text-4xl md:text-6xl lg:text-8xl text-customBlack font-black ">
+                <div className="font-outline-2 text-4xl md:text-6xl lg:text-8xl text-customWhite dark:text-customBlack font-black ">
                   CONTACT ME
                 </div>
-                <div className="text-dirtyWhite/80 text-xs md:text-xl lg:text-2xl absolute bottom-0">
+                <div className="text-customBlack font-bold dark:text-customLightgray text-xs md:text-xl lg:text-2xl absolute bottom-0">
                   CONTACT ME
                 </div>
               </div>
-              {alternativeLayout()}
-              {formLayout()}
+              <div className="flex flex-col gap-5">
+                {alternativeLayout()}
+                {formLayout()}
+              </div>
             </div>
           </div>
         </div>
