@@ -112,7 +112,15 @@ export default function ProjectPage() {
                       }  gap-5 bg-slate-200 dark:bg-customGray/30 p-5`}
                     >
                       <div className="basis-1/2  flex flex-col cursor-pointer bg-customBlack dark:bg-white h-fit">
-                        <img src={image} alt={title} />
+                        <div className="flex relative">
+                          <img src={image} alt={title} className="z-20" />
+                          <div className="absolute group/item text-customWhite w-full h-full hover:bg-customBlack/60 z-40">
+                            <div className="absolute h-full w-full flex justify-center items-center group/edit invisible  group-hover/item:visible">
+                              visit
+                            </div>
+                          </div>
+                        </div>
+                       
                         <div className="flex flex-col gap-2 p-2">
                           <div className="flex flex-row gap-1 divide-x divide-customLightgray">
                             {tech.map(({ name, link }, index) => (
