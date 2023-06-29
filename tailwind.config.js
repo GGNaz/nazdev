@@ -8,6 +8,8 @@ export const theme = {
       customLightgray: "#898989",
       dirtyWhite: "#F3F2F3",
       customWhite: "#F5F5F5",
+      customYellow: "#FCF4AB",
+      customAsh: "#F5F5F7",
     },
   },
 };

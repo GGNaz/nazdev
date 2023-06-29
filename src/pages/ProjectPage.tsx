@@ -1,7 +1,9 @@
 import { useNavigate } from "react-router-dom";
 import netflix from "../assets/projects/netflix.png";
+import netflixlogo from "../assets/projects/netflixlogo.png";
+import applestore from "../assets/projects/applestore.png";
 import snakeandladder from "../assets/projects/snakeandladder.png";
-import apple from "../assets/projects/apple.png";
+import spectacles from "../assets/projects/spectacles.png";
 
 import ScrollAnimation from "../components/ScrollAnimation";
 import { RiArrowLeftLine } from "@react-icons/all-files/ri/RiArrowLeftLine";
@@ -16,6 +18,7 @@ export default function ProjectPage() {
       tech: [
         { name: "ReactJS", link: "https://react.dev/" },
         { name: "Tailwind", link: "https://tailwindcss.com/" },
+        { name: "Zustand", link: "https://zustand-demo.pmnd.rs/" },
         { name: "TMDB API's", link: "https://www.themoviedb.org/" },
       ],
 
@@ -29,8 +32,10 @@ export default function ProjectPage() {
         "View movie ratings and total votes",
       ],
       delay: 0.2,
-      image: netflix,
+      image: netflixlogo,
       link: "https://movie-finder-zeta-virid.vercel.app/",
+      bgColor: "bg-customBlack",
+      textColor: "text-dirtyWhite",
     },
     {
       _id: 2,
@@ -51,6 +56,8 @@ export default function ProjectPage() {
       delay: 0.3,
       image: snakeandladder,
       link: "https://snake-and-ladder-beta.vercel.app/",
+      bgColor: "bg-customYellow",
+      textColor: "text-customBlack",
     },
     {
       _id: 3,
@@ -59,6 +66,7 @@ export default function ProjectPage() {
         { name: "ReactJS", link: "https://react.dev/" },
         { name: "Typescript", link: " https://www.typescriptlang.org/" },
         { name: "Material UI (MUI)", link: "https://mui.com/" },
+        { name: "Zustand", link: "https://zustand-demo.pmnd.rs/" },
       ],
 
       desc: "Apple Store is a e-commerce website, unfortunately its in under development, you can visit the website for current status.",
@@ -72,23 +80,41 @@ export default function ProjectPage() {
         "View details of specific item",
       ],
       delay: 0.4,
-      image: apple,
+      image: applestore,
       link: "https://apple-store-seven.vercel.app/",
+      bgColor: "bg-customAsh",
+      textColor: "text-customBlack",
+    },
+    {
+      _id: 4,
+      title: "Spectacles",
+      tech: [
+        { name: "ReactJS", link: "https://react.dev/" },
+        { name: "Tailwind", link: "https://tailwindcss.com/" },
+      ],
+
+      desc: "Redesign the landing page of spectacles, also known as an eyeglasses store or an optical shop, is a retail establishment that specializes in selling prescription eyeglasses, sunglasses, and other vision-related products. ",
+      func: ["View landing page"],
+      delay: 0.5,
+      image: spectacles,
+      link: "https://e-commerce-six-omega.vercel.app/",
+      bgColor: "bg-customAsh",
+      textColor: "text-customBlack",
     },
   ];
   return (
-    <div className="flex justify-center bg-customWhite dark:bg-customBlack pb-5">
+    <div className="flex justify-center bg-customWhite dark:bg-customBlack py-10">
       <div className="flex flex-col gap-5 max-w-5xl w-full p-5  ">
-        <div>
+        <div className="fixed z-50 left-0 top-3">
           <button
-            className="flex flex-row gap-2  text-customLightgray items-center"
+            className="transition ease-in-out delay-75  hover:-translate-y-1 hover:scale-110  duration-300 flex flex-row gap-2 bg-customBlack/80 dark:bg-customWhite/80 py-3 px-5 text-dirtyWhite dark:text-customBlack items-center"
             onClick={() => navigate("/")}
           >
-            <RiArrowLeftLine /> Back
+            <RiArrowLeftLine />
           </button>
         </div>
         <div className="flex flex-col gap-5">
-          <div className="flex flex-col relative animate__animated animate__backInLeft">
+          <div className="flex flex-col relative animate__animated animate__backInRight">
             <div className="font-outline-2  text-5xl  md:text-6xl lg:text-8xl text-customWhite dark:text-customBlack font-black ">
               PROJECTS
             </div>
@@ -99,8 +125,18 @@ export default function ProjectPage() {
           <div className="flex flex-col gap-10">
             {projectList.length > 0 &&
               projectList.map((data) => {
-                const { _id, title, desc, func, tech, delay, image, link } =
-                  data ?? {};
+                const {
+                  _id,
+                  title,
+                  desc,
+                  func,
+                  tech,
+                  delay,
+                  image,
+                  link,
+                  bgColor,
+                  textColor,
+                } = data ?? {};
                 return (
                   <ScrollAnimation
                     animateTo={{ y: 0 }}
@@ -115,9 +151,18 @@ export default function ProjectPage() {
                           : "flex-row"
                       }  gap-5 bg-zinc-200 dark:bg-customGray/30 p-5`}
                     >
-                      <div className="basis-1/2  flex flex-col cursor-pointer bg-customBlack dark:bg-white h-fit">
-                        <div className="flex relative">
-                          <img src={image} alt={title} className="z-20" />
+                      {/* bg-customBlack dark:bg-white */}
+                      <div
+                        className={`basis-1/2  flex flex-col  cursor-pointer ${bgColor} min-h-full`}
+                      >
+                        <div className="flex justify-center w-full  relative h-full">
+                          <div className="flex justify-center items-center">
+                            <img
+                              src={image}
+                              alt={title}
+                              className="z-20 max-h-40 "
+                            />
+                          </div>
 
                           <div className="absolute group/item text-customWhite w-full h-full hover:bg-customBlack/80 z-40">
                             <a
@@ -133,7 +178,7 @@ export default function ProjectPage() {
                         </div>
 
                         <div className="flex flex-col gap-2 p-2">
-                          <div className="flex flex-row gap-1 divide-x divide-customLightgray">
+                          <div className="flex flex-row gap-1 items-center divide-x divide-customLightgray">
                             {tech.map(({ name, link }, index) => (
                               <a
                                 href={link}
@@ -141,7 +186,9 @@ export default function ProjectPage() {
                                 rel="noopener noreferrer"
                                 key={index}
                               >
-                                <div className="text-xs hover:text-dirtyWhite dark:hover:text-customBlack/50 w-fit text-customLightgray dark:text-customBlack px-2">
+                                <div
+                                  className={`text-xs  w-fit ${textColor} px-2`}
+                                >
                                   {name}
                                 </div>
                               </a>

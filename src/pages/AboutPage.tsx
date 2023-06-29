@@ -34,18 +34,17 @@ export default function AboutPage() {
     },
   ];
   return (
-    <div className="flex justify-center bg-customWhite dark:bg-customBlack">
-      <div className="flex flex-col gap-5 max-w-5xl w-full p-5 ">
-        <div>
+    <div className="flex justify-center bg-customWhite dark:bg-customBlack py-10">
+      <div className="flex flex-col gap-5 max-w-5xl w-full p-5">
+        <div className="fixed z-50 left-0 top-3">
           <button
-            className="flex flex-row gap-2 text-customBlack dark:text-customLightgray items-center"
+            className="transition ease-in-out delay-75  hover:-translate-y-1 hover:scale-110  duration-300 flex flex-row gap-2 bg-customBlack/80 dark:bg-customWhite/80 py-3 px-5 text-dirtyWhite dark:text-customBlack items-center"
             onClick={() => navigate("/")}
           >
-            {" "}
-            <RiArrowLeftLine /> Back
+            <RiArrowLeftLine />
           </button>
         </div>
-        <div className="flex flex-col relative animate__animated animate__backInLeft">
+        <div className="flex flex-col relative animate__animated animate__backInRight">
           <div className="font-outline-2 text-5xl  md:text-6xl lg:text-8xl text-customWhite dark:text-customBlack font-black ">
             ABOUT ME
           </div>
