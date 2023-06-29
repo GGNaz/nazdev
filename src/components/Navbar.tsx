@@ -3,15 +3,16 @@ import { FaGithub } from "@react-icons/all-files/fa/FaGithub";
 // import { FaRegSun } from "@react-icons/all-files/fa/FaRegSun";
 // import { BsBrightnessHigh } from "@react-icons/all-files/bs/BsBrightnessHigh";
 import * as BSIcon from "react-icons/bs";
-import { useState } from "react";
+import { Dispatch, SetStateAction, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-export default function Navbar() {
+export default function Navbar({ setGetTheme }: any) {
   const navigate = useNavigate();
   const [theme, setTheme] = useState<string>(localStorage.theme);
   console.log("🚀 ~ file: Navbar.tsx:10 ~ Navbar ~ theme:", theme);
 
   const changeTheme = (theme: string) => {
+    console.log("🚀 ~ file: Navbar.tsx:15 ~ changeTheme ~ theme:", theme);
     if (
       localStorage.theme === "dark" ||
       (!("theme" in localStorage) &&
@@ -21,10 +22,12 @@ export default function Navbar() {
     } else {
       document.documentElement.classList.remove("dark");
     }
-
-    localStorage.theme = theme;
+    // localStorage.removeItem("theme");
+    // localStorage.clear();
 
     setTheme(theme);
+    localStorage.setItem("theme", theme);
+    setGetTheme(theme);
   };
 
   return (

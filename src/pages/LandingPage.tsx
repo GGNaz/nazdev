@@ -1,14 +1,20 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import ScrollAnimation from "../components/ScrollAnimation";
-
+import moon from "../assets/Images/moon.png";
+import sun from "../assets/Images/sun.png";
 import Navbar from "../components/Navbar";
 import Tech from "../components/Tech";
 export default function LandingPage() {
   const navigate = useNavigate();
 
   const [mouseClick, setMouseClick] = useState("");
+  const [getTheme, setGetTheme] = useState("light");
+  console.log(
+    "🚀 ~ file: LandingPage.tsx:14 ~ LandingPage ~ getTheme:",
+    getTheme
+  );
 
   const showAnimate = (route: string) => {
     setMouseClick(route);
@@ -16,9 +22,15 @@ export default function LandingPage() {
   };
 
   return (
-    <div className="flex flex-row overflow-hidden bg-dirtyWhite dark:bg-customBlack">
-      <Navbar />
-
+    <div className="flex relative flex-row overflow-hidden bg-dirtyWhite dark:bg-customBlack">
+      <Navbar setGetTheme={setGetTheme} />
+      <div className="absolute flex md:hidden -top-32 -right-60">
+        <img
+          src={getTheme !== "light" ? sun : moon}
+          alt="moon"
+          // className={` h-[50vh]`}
+        />
+      </div>
       <div className="flex  md:justify-normal justify-center items-start md:items-center w-full md:basis-4/6 z-30">
         <div className="flex flex-col gap-2 px-5 h-screen justify-center items-center md:items-start relative">
           <ScrollAnimation
