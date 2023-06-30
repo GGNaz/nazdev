@@ -1,9 +1,6 @@
 import { FaGithub } from "@react-icons/all-files/fa/FaGithub";
-// import { FaMoon } from "@react-icons/all-files/fa/FaMoon";
-// import { FaRegSun } from "@react-icons/all-files/fa/FaRegSun";
-// import { BsBrightnessHigh } from "@react-icons/all-files/bs/BsBrightnessHigh";
 import * as BSIcon from "react-icons/bs";
-import { Dispatch, SetStateAction, useState } from "react";
+import {  useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 export default function Navbar({ setGetTheme }: any) {

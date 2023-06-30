@@ -1,5 +1,4 @@
 import { useNavigate } from "react-router-dom";
-import netflix from "../assets/projects/netflix.png";
 import netflixlogo from "../assets/projects/netflixlogo.png";
 import applestore from "../assets/projects/applestore.png";
 import snakeandladder from "../assets/projects/snakeandladder.png";
@@ -8,6 +7,7 @@ import spectacles from "../assets/projects/spectacles.png";
 import ScrollAnimation from "../components/ScrollAnimation";
 import { RiArrowLeftLine } from "@react-icons/all-files/ri/RiArrowLeftLine";
 import ContactNav from "../components/ContactNav";
+
 export default function ProjectPage() {
   const navigate = useNavigate();
 
