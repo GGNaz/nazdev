@@ -1,17 +1,16 @@
 import { FaGithub } from "@react-icons/all-files/fa/FaGithub";
 import * as BSIcon from "react-icons/bs";
-import {  useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-export default function Navbar({ setGetTheme }: any) {
+export default function Navbar() {
   const navigate = useNavigate();
-  const [theme, setTheme] = useState<string>(localStorage.theme);
-  console.log("🚀 ~ file: Navbar.tsx:10 ~ Navbar ~ theme:", theme);
+  const [theme, setTheme] = useState<string>("light");
 
+  console.log(localStorage.theme);
   const changeTheme = (theme: string) => {
-    console.log("🚀 ~ file: Navbar.tsx:15 ~ changeTheme ~ theme:", theme);
     if (
-      localStorage.theme === "dark" ||
+      theme === "dark" ||
       (!("theme" in localStorage) &&
         window.matchMedia("(prefers-color-scheme: dark)").matches)
     ) {
@@ -24,20 +23,19 @@ export default function Navbar({ setGetTheme }: any) {
 
     setTheme(theme);
     localStorage.setItem("theme", theme);
-    setGetTheme(theme);
   };
 
   return (
-    <div className=" p-5 absolute top-0 left-0 z-50 w-full">
-      <div className="flex flex-row justify-between dark:text-dirtyWhite text-customBlack">
-        <div className="flex gap-3 text-xl">
+    <div className=" p-5 absolute top-0 right-0 z-50 w-fit">
+      <div className="flex flex-row justify-end dark:text-dirtyWhite text-customBlack">
+        {/* <div className="flex gap-3 text-xl">
           <div
             className="px-2 border border-customBlack dark:border-dirtyWhite flex items-center cursor-pointer"
             onClick={() => navigate("/")}
           >
             <div className=" text-md font-medium">N</div>
           </div>
-        </div>
+        </div> */}
         <div className="flex flex-row gap-2">
           <a
             href="https://github.com/GGNaz"
@@ -58,12 +56,12 @@ export default function Navbar({ setGetTheme }: any) {
               <BSIcon.BsBrightnessHigh />
             )}
           </div>
-          <button
+          {/* <button
             className="flex gap-2 items-center justify-center hover:text-white hover:bg-customGray/50  border-customBlack dark:border-dirtyWhite text-xl border p-2"
             onClick={() => navigate("/contact")}
           >
             <span className="text-xs font-medium">CONTACT ME</span>
-          </button>
+          </button> */}
         </div>
       </div>
     </div>

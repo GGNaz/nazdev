@@ -11,6 +11,10 @@ export const theme = {
       customYellow: "#FCF4AB",
       customAsh: "#F5F5F7",
     },
+    skew: {
+      5: "5deg",
+      4: "4deg",
+    },
   },
 };
 export const darkMode = "class";

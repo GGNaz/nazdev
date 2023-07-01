@@ -5,7 +5,11 @@ import AboutPage from "./pages/AboutPage";
 import ProjectPage from "./pages/ProjectPage";
 import ExperiencePage from "./pages/ExperiencePage";
 import Contact from "./pages/Contact";
+import { useEffect } from "react";
 function App() {
+  useEffect(() => {
+    localStorage.setItem("theme", "light");
+  }, []);
   return (
     <div className="bg-customWhite dark:bg-customBlack h-screen w-full scroll-smooth">
       <Routes>
