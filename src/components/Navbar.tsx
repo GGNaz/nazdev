@@ -1,10 +1,8 @@
 import { FaGithub } from "@react-icons/all-files/fa/FaGithub";
 import * as BSIcon from "react-icons/bs";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 
 export default function Navbar() {
-  const navigate = useNavigate();
   const [theme, setTheme] = useState<string>("light");
 
   console.log(localStorage.theme);

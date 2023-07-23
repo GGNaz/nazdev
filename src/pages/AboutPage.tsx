@@ -1,4 +1,3 @@
-import { useNavigate } from "react-router-dom";
 import profile from "../assets/Images/profile.jpg";
 import ScrollAnimation from "../components/ScrollAnimation";
 
