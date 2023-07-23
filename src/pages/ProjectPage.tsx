@@ -113,7 +113,7 @@ export default function ProjectPage() {
       textColor: "text-customBlack",
     },
     {
-      _id: 4,
+      _id: 5,
       title: "Spectacles",
       tech: [
         { name: "ReactJS", link: "https://react.dev/" },
