@@ -3,7 +3,7 @@ import netflixlogo from "../assets/projects/netflixlogo.png";
 import applestore from "../assets/projects/applestore.png";
 import snakeandladder from "../assets/projects/snakeandladder.png";
 import spectacles from "../assets/projects/spectacles.png";
-
+import lazpeefy from "../assets/projects/lazpeefy.png";
 import ScrollAnimation from "../components/ScrollAnimation";
 import { RiArrowLeftLine } from "@react-icons/all-files/ri/RiArrowLeftLine";
 import ContactNav from "../components/ContactNav";
@@ -61,6 +61,33 @@ export default function ProjectPage() {
     },
     {
       _id: 3,
+      title: "Lazpeefy",
+      tech: [
+        { name: "NextJS", link: "https://nextjs.org/" },
+        { name: "Typescript", link: " https://www.typescriptlang.org/" },
+        { name: "Tailwind", link: "https://tailwindcss.com/" },
+        // { name: "Zustand", link: "https://zustand-demo.pmnd.rs/" },
+      ],
+
+      desc: "Lazpeefy is a e-commerce website, unfortunately its in under development, you can visit the website for current status.",
+      func: [
+        "Login page",
+        "Add to Cart",
+        "Show the list of products",
+        "View the added products on the cart",
+        "Remove products from the cart",
+        "Checkout the products",
+        "Shows the breakdown of total payment",
+        "View details of specific item",
+      ],
+      delay: 0.4,
+      image: lazpeefy,
+      link: "https://lazpeefy.vercel.app/",
+      bgColor: "bg-customViolet",
+      textColor: "text-white",
+    },
+    {
+      _id: 4,
       title: "Apple Store",
       tech: [
         { name: "ReactJS", link: "https://react.dev/" },
@@ -79,7 +106,7 @@ export default function ProjectPage() {
         "Shows the breakdown of total payment",
         "View details of specific item",
       ],
-      delay: 0.4,
+      delay: 0.5,
       image: applestore,
       link: "https://apple-store-seven.vercel.app/",
       bgColor: "bg-customAsh",
