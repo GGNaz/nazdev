@@ -17,6 +17,7 @@ export default function Tech() {
     "Socket",
     "NextJS",
     "AWS S3",
+    "Chart.js",
   ];
 
   return (

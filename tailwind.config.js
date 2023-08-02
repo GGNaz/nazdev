@@ -11,6 +11,7 @@ export const theme = {
       customYellow: "#FCF4AB",
       customAsh: "#F5F5F7",
       customViolet: "#631CC6",
+      customRed: "#CC334C",
     },
     skew: {
       5: "5deg",

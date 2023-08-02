@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import netflixlogo from "../assets/projects/netflixlogo.png";
+import pokedex from "../assets/projects/pokedex.png";
 import applestore from "../assets/projects/applestore.png";
 import snakeandladder from "../assets/projects/snakeandladder.png";
 import spectacles from "../assets/projects/spectacles.png";
@@ -39,6 +40,29 @@ export default function ProjectPage() {
     },
     {
       _id: 2,
+      title: "Pokedex",
+      tech: [
+        { name: "NextJS", link: "https://nextjs.org/" },
+        { name: "Tailwind", link: "https://tailwindcss.com/" },
+        { name: "Pokeapi", link: "https://pokeapi.co/" },
+      ],
+
+      desc: "Pokedex is collection depicts existed Pokemon library, basic info, abilities, basic stats, habitats, Types, Evolution etc.",
+      func: [
+        "A detailed description of the Pokemon's physical appearance, characteristics, and natural habitat.",
+        "The primary type(s) of the Pokemon (e.g., Fire, Water, Grass) and their unique abilities and traits.",
+        "The evolutionary stages of the Pokemon, including pre-evolutions and evolutions.",
+        "Vital combat statistics, such as base stats, move pool, and learning abilities.",
+        "A unique numerical identifier assigned to each Pokemon species, making it easy to keep track of every Pokemon encountered",
+      ],
+      delay: 0.3,
+      image: pokedex,
+      link: "https://pokedex-nzrdv.vercel.app/",
+      bgColor: "bg-customRed",
+      textColor: "text-dirtyWhite",
+    },
+    {
+      _id: 3,
       title: "Snake and Ladder",
       tech: [
         { name: "ReactJS", link: "https://react.dev/" },
@@ -53,14 +77,14 @@ export default function ProjectPage() {
         "Keeps track of the players' turns",
         "Checks if a player has reached or surpassed the final square, declaring them as the winner and ending the game.",
       ],
-      delay: 0.3,
+      delay: 0.4,
       image: snakeandladder,
       link: "https://snake-and-ladder-beta.vercel.app/",
       bgColor: "bg-customYellow",
       textColor: "text-customBlack",
     },
     {
-      _id: 3,
+      _id: 4,
       title: "Lazpeefy",
       tech: [
         { name: "NextJS", link: "https://nextjs.org/" },
@@ -80,14 +104,14 @@ export default function ProjectPage() {
         "Shows the breakdown of total payment",
         "View details of specific item",
       ],
-      delay: 0.4,
+      delay: 0.5,
       image: lazpeefy,
       link: "https://lazpeefy.vercel.app/",
       bgColor: "bg-customViolet",
       textColor: "text-white",
     },
     {
-      _id: 4,
+      _id: 5,
       title: "Apple Store",
       tech: [
         { name: "ReactJS", link: "https://react.dev/" },
@@ -106,14 +130,14 @@ export default function ProjectPage() {
         "Shows the breakdown of total payment",
         "View details of specific item",
       ],
-      delay: 0.5,
+      delay: 0.6,
       image: applestore,
       link: "https://apple-store-seven.vercel.app/",
       bgColor: "bg-customAsh",
       textColor: "text-customBlack",
     },
     {
-      _id: 5,
+      _id: 6,
       title: "Spectacles",
       tech: [
         { name: "ReactJS", link: "https://react.dev/" },
@@ -122,7 +146,7 @@ export default function ProjectPage() {
 
       desc: "Redesign the landing page of spectacles, also known as an eyeglasses store or an optical shop, is a retail establishment that specializes in selling prescription eyeglasses, sunglasses, and other vision-related products. ",
       func: ["View landing page"],
-      delay: 0.5,
+      delay: 0.7,
       image: spectacles,
       link: "https://e-commerce-six-omega.vercel.app/",
       bgColor: "bg-customAsh",
