@@ -229,7 +229,7 @@ export default function ProjectPage() {
                         </div>
 
                         <div className="flex flex-col gap-2 p-2">
-                          <div className="flex flex-row gap-1 items-center divide-x divide-customLightgray">
+                          <div className="flex flex-row overflow-hidden overflow-y-scroll gap-1 items-center divide-x divide-customLightgray">
                             {tech.map(({ name, link }, index) => (
                               <a
                                 href={link}

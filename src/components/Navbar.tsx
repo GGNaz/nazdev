@@ -5,7 +5,6 @@ import { useState } from "react";
 export default function Navbar() {
   const [theme, setTheme] = useState<string>("light");
 
-  console.log(localStorage.theme);
   const changeTheme = (theme: string) => {
     if (
       theme === "dark" ||
@@ -24,16 +23,16 @@ export default function Navbar() {
   };
 
   return (
-    <div className=" p-5 absolute top-0 right-0 z-50 w-fit">
-      <div className="flex flex-row justify-end dark:text-dirtyWhite text-customBlack">
-        {/* <div className="flex gap-3 text-xl">
+    <div className=" p-5 absolute top-0 right-0 z-50 w-full">
+      <div className="flex flex-row justify-between  dark:text-dirtyWhite text-customBlack">
+        <div className="flex gap-3 text-xl ">
           <div
             className="px-2 border border-customBlack dark:border-dirtyWhite flex items-center cursor-pointer"
-            onClick={() => navigate("/")}
+            // onClick={() => navigate("/")}
           >
             <div className=" text-md font-medium">N</div>
           </div>
-        </div> */}
+        </div>
         <div className="flex flex-row gap-2">
           <a
             href="https://github.com/GGNaz"

@@ -7,6 +7,7 @@ import xypher from "../assets/Images/xypher.png";
 import philmech from "../assets/Images/philmech.png";
 import { useState, useEffect } from "react";
 import ContactNav from "../components/ContactNav";
+import * as Io5Icons from "react-icons/io5";
 export default function ExperiencePage() {
   const navigate = useNavigate();
 
@@ -23,16 +24,13 @@ export default function ExperiencePage() {
   };
 
   const [experienceList, setExperience] = useState<ExperienceProps[]>([]);
-  console.log(
-    "🚀 ~ file: ExperiencePage.tsx:25 ~ ExperiencePage ~ experienceList:",
-    experienceList
-  );
+
   const experience = [
     {
       _id: 1,
       position: "Junior Developer",
-      date: "October 09, 2021 - Present",
-      desc: "As a junior developer at Xypher Solution Inc , I am proud of my skills and knowledge in various areas of web development. I have experience in API integration, which has allowed me to seamlessly connect my projects with external data sources. I also have a strong understanding of layout and design principles, which enables me to create visually appealing and user-friendly interfaces. In addition to these skills, I have a comprehensive knowledge of NPM packages and their various functions. This knowledge has proved invaluable in streamlining my workflows and making my development process more efficient. Another area I excel in is integrating Google Maps into my projects. I have experience using the Google Maps API to display maps and markers. Overall, my skills and knowledge have allowed me to be a productive and effective junior developer.",
+      date: "October 2021 - October 2023",
+      desc: "As a junior developer at Xypher Solution Inc , I am proud of my skills and knowledge in various areas of web development. I have experience in API integration, which has allowed me to seamlessly connect my projects with external data sources. I also have a strong understanding of layout and design principles, which enables me to create visually appealing and user-friendly interfaces. In addition to these skills, I have a comprehensive knowledge of NPM packages and their various functions. This knowledge has proved invaluable in streamlining my workflows and making my development process more efficient. Another area I excel in is integrating Google Maps into our projects. I have experience using the Google Maps API to display maps and markers. Socket.io for notification and chat. Overall, my skills and knowledge have allowed me to be a productive and effective junior developer.",
       icon: <FaSuitcase size={25} />,
       image: xypher,
       link: "https://xyphersolutionsinc.com/",
@@ -59,10 +57,7 @@ export default function ExperiencePage() {
 
   function seeMoreFunction(data: ExperienceProps) {
     const copyList: ExperienceProps[] = [...experienceList];
-    console.log(
-      "🚀 ~ file: ExperiencePage.tsx:56 ~ seeMoreFunction ~ copyList:",
-      copyList
-    );
+
     const findIndexList = experience.findIndex(({ _id }) => _id == data._id);
 
     if (findIndexList >= 0) {
@@ -148,9 +143,20 @@ export default function ExperiencePage() {
                           </div>
                         </div>
                       </div>
-                      <div className="basis-1/3 border border-customGray dark:border-dirtyWhite/80 justify-center items-center hidden md:flex bg-dirtyWhite/80">
+                      <div className="basis-1/3 relative  flex-col border border-customGray dark:border-dirtyWhite/80 justify-center items-center hidden md:flex bg-dirtyWhite/80">
                         <div className="p-5 ">
                           <img src={image} alt={link} />
+                        </div>
+                        <div className="absolute group/item text-customWhite w-full h-full hover:bg-customBlack/80 z-40">
+                          <a
+                            href={link}
+                            target="blank"
+                            rel="noopener noreferrer"
+                          >
+                            <div className=" absolute h-full w-full flex justify-center items-center group/edit invisible  group-hover/item:visible">
+                              <div className="">{link}</div>
+                            </div>
+                          </a>
                         </div>
                       </div>
                     </div>

@@ -68,10 +68,6 @@ export default function Contact() {
         )
         .then(
           (result: EmailProps) => {
-            console.log(
-              "🚀 ~ file: Contact.tsx:54 ~ sendEmail ~ result:",
-              result
-            );
             return setFormVal(defaultVal);
             // console.log(result.text);
           },
