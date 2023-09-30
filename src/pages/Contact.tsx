@@ -17,11 +17,6 @@ type FormProps = {
   user_company: string;
 };
 
-type EmailProps = {
-  status: number;
-  text: string;
-};
-
 export default function Contact() {
   const navigate = useNavigate();
 
