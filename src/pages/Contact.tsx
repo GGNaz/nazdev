@@ -67,7 +67,7 @@ export default function Contact() {
           "tAzzZd5FoqEGHDHI3"
         )
         .then(
-          (result: EmailProps) => {
+          () => {
             return setFormVal(defaultVal);
             // console.log(result.text);
           },

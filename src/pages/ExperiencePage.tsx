@@ -7,7 +7,7 @@ import xypher from "../assets/Images/xypher.png";
 import philmech from "../assets/Images/philmech.png";
 import { useState, useEffect } from "react";
 import ContactNav from "../components/ContactNav";
-import * as Io5Icons from "react-icons/io5";
+
 export default function ExperiencePage() {
   const navigate = useNavigate();
 
