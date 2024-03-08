@@ -5,6 +5,7 @@ import { FaSuitcase } from "@react-icons/all-files/fa/FaSuitcase";
 import { FaCode } from "@react-icons/all-files/fa/FaCode";
 import xypher from "../assets/Images/xypher.png";
 import philmech from "../assets/Images/philmech.png";
+import smsupermalls from "../assets/Images/smsupermalls.png";
 import { useState, useEffect } from "react";
 import ContactNav from "../components/ContactNav";
 
@@ -27,7 +28,18 @@ export default function ExperiencePage() {
 
   const experience = [
     {
-      _id: 1,
+      _id: 2,
+      position: "Software Specialist",
+      date: "October 2023 - March 2024",
+      desc: "As a software specialist at SM Supermalls, I adeptly navigated through a dynamic tech stack that included Svelte, Tailwind, and Laravel PHP. Engaged in developing cutting-edge solutions, I took the helm of pivotal projects such as the SM Deals Web and SM Deals CMS, both of which showcased the seamless integration of these technologies. In the exhilarating gamified Balloon Popper project set to release in December 2023, I implemented a strategic enhancement by seamlessly integrating Google Analytics. ",
+      icon: <FaSuitcase size={25} />,
+      image: smsupermalls,
+      link: "https://www.smsupermalls.com/",
+      delay: 0.3,
+      isExpand: false,
+    },
+    {
+      _id: 2,
       position: "Junior Developer",
       date: "October 2021 - October 2023",
       desc: "As a junior developer at Xypher Solution Inc , I am proud of my skills and knowledge in various areas of web development. I have experience in API integration, which has allowed me to seamlessly connect my projects with external data sources. I also have a strong understanding of layout and design principles, which enables me to create visually appealing and user-friendly interfaces. In addition to these skills, I have a comprehensive knowledge of NPM packages and their various functions. This knowledge has proved invaluable in streamlining my workflows and making my development process more efficient. Another area I excel in is integrating Google Maps into our projects. I have experience using the Google Maps API to display maps and markers. Socket.io for notification and chat. Overall, my skills and knowledge have allowed me to be a productive and effective junior developer.",
@@ -38,7 +50,7 @@ export default function ExperiencePage() {
       isExpand: false,
     },
     {
-      _id: 2,
+      _id: 3,
       position: "Web Developer (Internship)",
       date: "Feb 2019 - May 2019",
       desc: "As a web developer at Philippine Center for Postharvest Development and Mechanization (PhilMech), I have acquired skills in layout design, specifically for kiosk machines and personal data sheets (PDS) using Bootstrap grid system. Additionally, I have also designed several login pages and certificates, taking into consideration the user interface and experience. The use of Bootstrap grid allowed me to create a responsive and structured layout, ensuring that the PDS and other pages are displayed correctly on various screen sizes. These skills have greatly enhanced my overall web development abilities and have allowed me to create visually appealing and functional web pages.",
@@ -115,7 +127,7 @@ export default function ExperiencePage() {
                               <div className="md:flex hidden">{icon}</div>{" "}
                               <div className="md:hidden w-16 h-10 flex justify-center">
                                 <img
-                                  className=" w-fit h-full"
+                                  className=" w-fit h-full object-contain"
                                   src={image}
                                   alt={link}
                                 />

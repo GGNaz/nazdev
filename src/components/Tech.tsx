@@ -7,7 +7,7 @@ export default function Tech() {
     "Material UI",
     "Tailwindcss",
     "HTML",
-    "MySQL",
+    "Svelte",
     "TypeScript",
     "Redux",
     "Zustand",
