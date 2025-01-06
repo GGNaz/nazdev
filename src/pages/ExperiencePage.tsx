@@ -6,6 +6,7 @@ import { FaCode } from "@react-icons/all-files/fa/FaCode";
 import xypher from "../assets/Images/xypher.png";
 import philmech from "../assets/Images/philmech.png";
 import smsupermalls from "../assets/Images/smsupermalls.png";
+import wombiz from "../assets/Images/wombiz.png";
 import { useState, useEffect } from "react";
 import ContactNav from "../components/ContactNav";
 
@@ -28,10 +29,10 @@ export default function ExperiencePage() {
 
   const experience = [
     {
-      _id: 2,
+      _id: 1,
       position: "Software Specialist",
-      date: "October 2023 - March 2024",
-      desc: "As a software specialist at SM Supermalls, I adeptly navigated through a dynamic tech stack that included Svelte, Tailwind, and Laravel PHP. Engaged in developing cutting-edge solutions, I took the helm of pivotal projects such as the SM Deals Web and SM Deals CMS, both of which showcased the seamless integration of these technologies. In the exhilarating gamified Balloon Popper project set to release in December 2023, I implemented a strategic enhancement by seamlessly integrating Google Analytics. ",
+      date: "October 2023 - Present",
+      desc: "Projects - SM Deals, SM CMS, ParkMate Hub, ParkMate encoder and SM POS",
       icon: <FaSuitcase size={25} />,
       image: smsupermalls,
       link: "https://www.smsupermalls.com/",
@@ -40,9 +41,20 @@ export default function ExperiencePage() {
     },
     {
       _id: 2,
+      position: "Front-end Developer",
+      date: "July 2023 - February 2024",
+      desc: "Project - Women's Business Club",
+      icon: <FaSuitcase size={25} />,
+      image: wombiz,
+      link: "https://womensbusiness.club/",
+      delay: 0.4,
+      isExpand: false,
+    },
+    {
+      _id: 3,
       position: "Junior Developer",
       date: "October 2021 - October 2023",
-      desc: "As a junior developer at Xypher Solution Inc , I am proud of my skills and knowledge in various areas of web development. I have experience in API integration, which has allowed me to seamlessly connect my projects with external data sources. I also have a strong understanding of layout and design principles, which enables me to create visually appealing and user-friendly interfaces. In addition to these skills, I have a comprehensive knowledge of NPM packages and their various functions. This knowledge has proved invaluable in streamlining my workflows and making my development process more efficient. Another area I excel in is integrating Google Maps into our projects. I have experience using the Google Maps API to display maps and markers. Socket.io for notification and chat. Overall, my skills and knowledge have allowed me to be a productive and effective junior developer.",
+      desc: "Projects - School Management System, Human Resource Information System (HRIS) and Hype (Similar to Grab).",
       icon: <FaSuitcase size={25} />,
       image: xypher,
       link: "https://xyphersolutionsinc.com/",
@@ -50,10 +62,10 @@ export default function ExperiencePage() {
       isExpand: false,
     },
     {
-      _id: 3,
+      _id: 4,
       position: "Web Developer (Internship)",
       date: "Feb 2019 - May 2019",
-      desc: "As a web developer at Philippine Center for Postharvest Development and Mechanization (PhilMech), I have acquired skills in layout design, specifically for kiosk machines and personal data sheets (PDS) using Bootstrap grid system. Additionally, I have also designed several login pages and certificates, taking into consideration the user interface and experience. The use of Bootstrap grid allowed me to create a responsive and structured layout, ensuring that the PDS and other pages are displayed correctly on various screen sizes. These skills have greatly enhanced my overall web development abilities and have allowed me to create visually appealing and functional web pages.",
+      desc: "Projects - Web based personal data sheets (PDS), certificates and layout design for kiosk machine.",
       icon: <FaCode size={25} />,
       image: philmech,
       link: "https://www.philmech.gov.ph/",
@@ -143,21 +155,22 @@ export default function ExperiencePage() {
 
                           <div className="ml-0 md:ml-5 p-0 md:pl-8 border-l-customGray border-l-0 md:border-l-2">
                             <div className="text-customGray dark:text-dirtyWhite/70 text-justify">
-                              {isExpand ? desc : desc.slice(0, 300)}{" "}
+                              {/* {isExpand ? desc : desc.slice(0, 300)}{" "}
                               <button
                                 onClick={() => seeMoreFunction(data)}
                                 className="text-customGray/60"
                               >
                                 {" "}
                                 ...{isExpand ? "see less" : "see more"}
-                              </button>
+                              </button> */}
+                              {desc}
                             </div>
                           </div>
                         </div>
                       </div>
                       <div className="basis-1/3 relative  flex-col border border-customGray dark:border-dirtyWhite/80 justify-center items-center hidden md:flex bg-dirtyWhite/80">
                         <div className="p-5 ">
-                          <img src={image} alt={link} />
+                          <img className="w-20 h-fit" src={image} alt={link} />
                         </div>
                         <div className="absolute group/item text-customWhite w-full h-full hover:bg-customBlack/80 z-40">
                           <a

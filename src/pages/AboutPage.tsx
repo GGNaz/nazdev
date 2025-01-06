@@ -1,37 +1,10 @@
-import profile from "../assets/Images/profile.jpg";
+import profile from "../assets/Images/profile2.jpg";
 import ScrollAnimation from "../components/ScrollAnimation";
 
 import ContactNav from "../components/ContactNav";
 import BackBtn from "../components/BackBtn";
 
 export default function AboutPage() {
-  const hobbies = [
-    {
-      _id: 1,
-      icon: "Playing games",
-      title: "Playing games",
-    },
-    {
-      _id: 2,
-      icon: "Coding",
-      title: "Coding",
-    },
-    {
-      _id: 3,
-      icon: "Biking",
-      title: "Biking",
-    },
-    {
-      _id: 4,
-      icon: "Listen to music",
-      title: "Listen to music",
-    },
-    {
-      _id: 5,
-      icon: "Watching anime or movies",
-      title: "Watching anime or movies",
-    },
-  ];
   return (
     <div className="flex justify-center bg-customWhite dark:bg-customBlack py-10">
       <div className="flex flex-col gap-5 max-w-5xl w-full p-5">
@@ -74,37 +47,14 @@ export default function AboutPage() {
               delay={0.4}
             >
               <div className="text-customGray dark:text-customLightgray flex flex-col gap-2 text-justify text-md md:text-lg">
-                <div>
-                  Hello! I'm Naz, a highly skilled and innovative front-end
-                  developer with a passion for creating immersive and
-                  user-friendly digital experiences.{" "}
-                </div>
-
-                <div>
-                  With 2(two) years of experience in the field, I bring a strong
-                  technical expertise and a proven track record of delivering
-                  high-quality solutions to meet and exceed client expectations.{" "}
-                </div>
-              </div>
-            </ScrollAnimation>
-            <ScrollAnimation
-              animateTo={{ y: 0 }}
-              animateFrom={{ y: 50 }}
-              delay={0.5}
-            >
-              <div className="flex flex-col gap-1">
-                <div className="text-xl text-customBlack dark:text-dirtyWhite/90">
-                  Things I love
-                </div>
-                <div className="flex flex-col md:flex-row gap-3">
-                  {hobbies?.map(({ _id, icon, title }) => (
-                    <a title={title} key={_id}>
-                      <div className="p-2 bg-customWhite dark:bg-customGray h-full w-full flex flex-col justify-center text-customGray border border-customGray dark:text-dirtyWhite ">
-                        <span>{icon}</span>
-                      </div>
-                    </a>
-                  ))}
-                </div>
+                Hi! I'm Naz, a passionate and innovative front-end developer
+                with 3+ years of experience crafting immersive, user-friendly
+                digital experiences. I specialize in translating ideas into
+                seamless, interactive interfaces, combining technical expertise
+                with a creative mindset to deliver exceptional results. My
+                dedication to exceeding client expectations is reflected in a
+                proven track record of high-quality solutions that drive user
+                engagement and satisfaction.
               </div>
             </ScrollAnimation>
           </div>
