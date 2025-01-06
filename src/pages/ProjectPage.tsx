@@ -2,7 +2,6 @@ import { useNavigate } from "react-router-dom";
 import netflixlogo from "../assets/projects/netflixlogo.png";
 import pokedex from "../assets/projects/pokedex.png";
 import snakeandladder from "../assets/projects/snakeandladder.png";
-import lazpeefy from "../assets/projects/lazpeefy.png";
 import ScrollAnimation from "../components/ScrollAnimation";
 import { RiArrowLeftLine } from "@react-icons/all-files/ri/RiArrowLeftLine";
 import ContactNav from "../components/ContactNav";
@@ -59,34 +58,6 @@ export default function ProjectPage() {
       bgColor: "bg-customRed",
       textColor: "text-dirtyWhite",
     },
-    // {
-    //   _id: 3,
-    //   title: "Lazpeefy",
-    //   tech: [
-    //     { name: "NextJS", link: "https://nextjs.org/" },
-    //     { name: "Typescript", link: " https://www.typescriptlang.org/" },
-    //     { name: "MUI", link: "https://mui.com/" },
-    //     { name: "Redux", link: "https://react-redux.js.org/" },
-    //     { name: "Fakestoreapi", link: "https://fakestoreapi.com/" },
-    //   ],
-
-    //   desc: "Lazpeefy is a e-commerce website, unfortunately its in under development, you can visit the website for current status.",
-    //   func: [
-    //     "Login page",
-    //     "Add to Cart",
-    //     "Show the list of products",
-    //     "View the added products on the cart",
-    //     "Remove products from the cart",
-    //     "Checkout the products",
-    //     "Shows the breakdown of total payment",
-    //     "View details of specific item",
-    //   ],
-    //   delay: 0.4,
-    //   image: lazpeefy,
-    //   link: "https://lazpeefy.vercel.app/",
-    //   bgColor: "bg-customViolet",
-    //   textColor: "text-white",
-    // },
     {
       _id: 3,
       title: "Snake and Ladder",
@@ -109,49 +80,6 @@ export default function ProjectPage() {
       bgColor: "bg-customYellow",
       textColor: "text-customBlack",
     },
-
-    // {
-    //   _id: 5,
-    //   title: "Apple Store",
-    //   tech: [
-    //     { name: "ReactJS", link: "https://react.dev/" },
-    //     { name: "Typescript", link: " https://www.typescriptlang.org/" },
-    //     { name: "Material UI (MUI)", link: "https://mui.com/" },
-    //     { name: "Zustand", link: "https://zustand-demo.pmnd.rs/" },
-    //   ],
-
-    //   desc: "Apple Store is a e-commerce website, unfortunately its in under development, you can visit the website for current status.",
-    //   func: [
-    //     "Show list of iPhones, iPads, MacBook and Airpods",
-    //     "Add to Cart, item name with quantity and color",
-    //     "View the items on the cart",
-    //     "Remove items from the cart",
-    //     "Checkout the items",
-    //     "Shows the breakdown of total payment",
-    //     "View details of specific item",
-    //   ],
-    //   delay: 0.6,
-    //   image: applestore,
-    //   link: "https://apple-store-seven.vercel.app/",
-    //   bgColor: "bg-customAsh",
-    //   textColor: "text-customBlack",
-    // },
-    // {
-    //   _id: 6,
-    //   title: "Spectacles",
-    //   tech: [
-    //     { name: "ReactJS", link: "https://react.dev/" },
-    //     { name: "Tailwind", link: "https://tailwindcss.com/" },
-    //   ],
-
-    //   desc: "Redesign the landing page of spectacles, also known as an eyeglasses store or an optical shop, is a retail establishment that specializes in selling prescription eyeglasses, sunglasses, and other vision-related products. ",
-    //   func: ["View landing page"],
-    //   delay: 0.7,
-    //   image: spectacles,
-    //   link: "https://e-commerce-six-omega.vercel.app/",
-    //   bgColor: "bg-customAsh",
-    //   textColor: "text-customBlack",
-    // },
   ];
   return (
     <div className="flex justify-center bg-customWhite dark:bg-customBlack py-10">

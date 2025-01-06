@@ -64,7 +64,6 @@ export default function Contact() {
         .then(
           () => {
             return setFormVal(defaultVal);
-            // console.log(result.text);
           },
           (error: any) => {
             console.log(error.text);

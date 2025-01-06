@@ -29,7 +29,6 @@ export default function Tech() {
         })}
         className="dark:text-white text-customBlack"
         onClick={(tag: string) => alert(tag)}
-        // onClickOptions={{ passive: true }}
       >
         {texts}
       </TagCloud>

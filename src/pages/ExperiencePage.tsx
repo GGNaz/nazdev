@@ -22,7 +22,6 @@ export default function ExperiencePage() {
     image: string;
     link: string;
     delay: number;
-    isExpand: boolean;
   };
 
   const [experienceList, setExperience] = useState<ExperienceProps[]>([]);
@@ -37,7 +36,6 @@ export default function ExperiencePage() {
       image: smsupermalls,
       link: "https://www.smsupermalls.com/",
       delay: 0.3,
-      isExpand: false,
     },
     {
       _id: 2,
@@ -48,7 +46,6 @@ export default function ExperiencePage() {
       image: wombiz,
       link: "https://womensbusiness.club/",
       delay: 0.4,
-      isExpand: false,
     },
     {
       _id: 3,
@@ -59,7 +56,6 @@ export default function ExperiencePage() {
       image: xypher,
       link: "https://xyphersolutionsinc.com/",
       delay: 0.5,
-      isExpand: false,
     },
     {
       _id: 4,
@@ -70,7 +66,6 @@ export default function ExperiencePage() {
       image: philmech,
       link: "https://www.philmech.gov.ph/",
       delay: 0.8,
-      isExpand: false,
     },
   ];
 
@@ -78,17 +73,6 @@ export default function ExperiencePage() {
     setExperience(experience);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
-  function seeMoreFunction(data: ExperienceProps) {
-    const copyList: ExperienceProps[] = [...experienceList];
-
-    const findIndexList = experience.findIndex(({ _id }) => _id == data._id);
-
-    if (findIndexList >= 0) {
-      copyList[findIndexList].isExpand = !copyList[findIndexList].isExpand;
-      setExperience(copyList);
-    }
-  }
 
   return (
     <div className="flex justify-center bg-customWhite dark:bg-customBlack py-10">
@@ -113,17 +97,8 @@ export default function ExperiencePage() {
           <div className="flex flex-col gap-10">
             {experienceList?.length > 0 &&
               experienceList?.map((data) => {
-                const {
-                  _id,
-                  position,
-                  date,
-                  desc,
-                  icon,
-                  image,
-                  link,
-                  delay,
-                  isExpand,
-                } = data ?? {};
+                const { _id, position, date, desc, icon, image, link, delay } =
+                  data ?? {};
                 return (
                   <ScrollAnimation
                     animateTo={{ y: 0 }}
@@ -155,14 +130,6 @@ export default function ExperiencePage() {
 
                           <div className="ml-0 md:ml-5 p-0 md:pl-8 border-l-customGray border-l-0 md:border-l-2">
                             <div className="text-customGray dark:text-dirtyWhite/70 text-justify">
-                              {/* {isExpand ? desc : desc.slice(0, 300)}{" "}
-                              <button
-                                onClick={() => seeMoreFunction(data)}
-                                className="text-customGray/60"
-                              >
-                                {" "}
-                                ...{isExpand ? "see less" : "see more"}
-                              </button> */}
                               {desc}
                             </div>
                           </div>
